@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\SigilManager.cs" />
      <Compile Include="Assets\Scripts\SwipeTrail.cs" />
      <Compile Include="Assets\Scripts\TriggerTest.cs" />
  <Reference Include="UnityEngine.UI">

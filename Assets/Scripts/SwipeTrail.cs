@@ -12,10 +12,17 @@ public class SwipeTrail : MonoBehaviour {
     GameObject thisTrail;
     Vector3 startPos;
     Plane objPlane;
-    
+
+    TrailRenderer existingLines;
+    public List<TrailRenderer> lines;
+
+    SigilManager sm;
+
     // Use this for initialization
-	void Start () {
+    void Start () {
         objPlane = new Plane(Camera.main.transform.forward *= 1, this.transform.position);
+
+        sm = GameObject.FindObjectOfType<SigilManager>();
 	}
 	
 	// Update is called once per frame
@@ -23,6 +30,8 @@ public class SwipeTrail : MonoBehaviour {
 		if (((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) ||
             Input.GetMouseButtonDown(0)))
         {
+            DestroyLines();
+
             thisTrail = (GameObject)Instantiate(trailPrefab, 
                                                     this.transform.position, 
                                                     Quaternion.identity);
@@ -46,4 +55,18 @@ public class SwipeTrail : MonoBehaviour {
                 Destroy(thisTrail);
         }
 	}
+
+    void DestroyLines ()
+    {
+        sm.ClearString();
+        lines.Clear();
+
+        existingLines = GameObject.FindObjectOfType<TrailRenderer>();
+        lines.Add(existingLines);
+
+        foreach (TrailRenderer line in lines)
+        {
+            Destroy(line);
+        }
+    }
 }

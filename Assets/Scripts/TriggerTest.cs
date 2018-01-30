@@ -1,16 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TriggerTest : MonoBehaviour {
 
-    Renderer renderer;
+    //Renderer renderer;
+    Image image;
+    SigilManager sm;
+
+    public char letter;
+    bool triggered = false;
     
 
     // Use this for initialization
 	void Start () {
-        renderer = GetComponent<Renderer>();
-        renderer.material.color = Color.white;
+        sm = GameObject.FindObjectOfType<SigilManager>();
+
+        //renderer = GetComponent<Renderer>();
+        //renderer.material.color = Color.white;
+
+        image = GetComponent<Image>();
+        image.color = Color.white;
     }
 	
 	// Update is called once per frame
@@ -18,21 +29,23 @@ public class TriggerTest : MonoBehaviour {
 		
 	}
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Line")
         {
-            renderer.material.color = Color.red;
-            Debug.Log("tiggering");
+            if (!triggered)
+                sm.AddChar(letter);
+
+            image.color = Color.red;
+            triggered = true;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Line")
         {
-            renderer.material.color = Color.white;
-            Debug.Log("not triggering");
+            image.color = Color.white;
         }
     }
 }
