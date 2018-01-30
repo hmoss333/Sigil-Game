@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class TriggerTest : MonoBehaviour {
 
     //Renderer renderer;
-    Image image;
+    [System.NonSerialized] public Image image;
     SigilManager sm;
+    public Text orderNum;
 
-    public char letter;
-    bool triggered = false;
+    public string letters;
+    public bool isCorrect = false;
+    [System.NonSerialized] public bool triggered = false;
     
 
     // Use this for initialization
@@ -22,6 +24,7 @@ public class TriggerTest : MonoBehaviour {
 
         image = GetComponent<Image>();
         image.color = Color.white;
+        orderNum.text = "";
     }
 	
 	// Update is called once per frame
@@ -33,11 +36,9 @@ public class TriggerTest : MonoBehaviour {
     {
         if (other.tag == "Line")
         {
-            if (!triggered)
-                sm.AddChar(letter);
-
-            image.color = Color.red;
-            triggered = true;
+            //image.color = Color.red;
+            if (isCorrect)
+                sm.AddTriggerValues(letters);
         }
     }
 
@@ -45,7 +46,7 @@ public class TriggerTest : MonoBehaviour {
     {
         if (other.tag == "Line")
         {
-            image.color = Color.white;
+            //image.color = Color.white;
         }
     }
 }
