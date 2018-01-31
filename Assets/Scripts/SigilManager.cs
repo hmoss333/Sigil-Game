@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SigilManager : MonoBehaviour {
 
-    public string currentString;
-    public string checkString;
+    string currentString;
+    [SerializeField] string checkString;
     public Text sigilName;
 
     public TriggerTest[] triggerList;
@@ -42,7 +43,6 @@ public class SigilManager : MonoBehaviour {
     public void CheckTriggers ()
     {
         correctTriggerList.Clear();
-        int orderNum = 0;
         char[] tempCheckChars = checkString.ToCharArray();
 
         foreach (TriggerTest trigger in triggerList)
@@ -55,10 +55,9 @@ public class SigilManager : MonoBehaviour {
                 {
                     if (tempCheckChars[j] == tempTriggerChars[i])
                     {
-                        orderNum++;
                         correctTriggerList.Add(trigger);
                         trigger.isCorrect = true;
-                        trigger.orderNum.text = orderNum.ToString();
+                        trigger.orderNum.text = (j + 1).ToString();
                     }
                 }
             }
@@ -82,53 +81,20 @@ public class SigilManager : MonoBehaviour {
                 {
                     tempTestString = tempTestString + tempCurrentChars[i];
                     Debug.Log(tempTestString);
-                }
-            }
-        }
 
-        currentString = tempTestString;
-        int testCount = 0; //this seems bad/lazy
-        for (int i = 0; i < tempCheckChars.Length; i++)
-        {
-            if (tempTestString.Contains(tempCheckChars[i].ToString())) 
-            {
-                testCount++;
-                if (testCount >= tempCheckChars.Length)
-                {
-                    sigilName.text = "Correct";
-                    checkString = "";
-                    foreach (TriggerTest trigger in correctTriggerList)
+                    if (tempTestString == checkString)
                     {
-                        trigger.image.color = Color.white;
-                        trigger.orderNum.text = "";
-                        trigger.isCorrect = false;
+                        sigilName.text = "Correct";
+                        checkString = "";
+                        foreach (TriggerTest trigger in correctTriggerList)
+                        {
+                            trigger.image.color = Color.white;
+                            trigger.orderNum.text = "";
+                            trigger.isCorrect = false;
+                        }
                     }
                 }
-                    
             }
-        }
-
-        //if (tempTestString == checkString)
-        //{
-        //    sigilName.text = "Correct";
-        //    checkString = "";
-        //    foreach (TriggerTest trigger in correctTriggerList)
-        //    {
-        //        trigger.image.color = Color.white;
-        //        trigger.isCorrect = false;
-        //    }
-        //}
-    }
-
-    void CheckSigil ()
-    {
-        //char[] tempCheckChars = checkString.ToCharArray();
-        //char[] tempCurrentChars = currentString.ToCharArray();
-
-
-        if (currentString.Contains(checkString))
-        {
-            sigilName.text = "Correct";
         }
     }
 

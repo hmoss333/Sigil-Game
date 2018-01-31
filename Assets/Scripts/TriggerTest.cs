@@ -12,7 +12,7 @@ public class TriggerTest : MonoBehaviour {
 
     public string letters;
     public bool isCorrect = false;
-    [System.NonSerialized] public bool triggered = false;
+    public bool triggered = false;
     
 
     // Use this for initialization
@@ -37,8 +37,11 @@ public class TriggerTest : MonoBehaviour {
         if (other.tag == "Line")
         {
             //image.color = Color.red;
-            if (isCorrect)
+            if (isCorrect && !triggered)
+            {
                 sm.AddTriggerValues(letters);
+                triggered = true;
+            }
         }
     }
 
@@ -47,6 +50,7 @@ public class TriggerTest : MonoBehaviour {
         if (other.tag == "Line")
         {
             //image.color = Color.white;
+            triggered = false;
         }
     }
 }
