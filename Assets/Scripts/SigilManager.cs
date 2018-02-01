@@ -143,4 +143,19 @@ public class SigilManager : MonoBehaviour {
             Debug.Log("Something went wrong");
         }
     }
+
+    public void ClearButton ()
+    {
+        checkString = "";
+        currentString = "";
+
+        sigilName.text = checkString;
+        foreach (TriggerTest trigger in correctTriggerList)
+        {
+            trigger.image.color = Color.white;
+            trigger.orderNum.text = "";
+            trigger.isCorrect = false;
+        }
+        CheckTriggers();
+    }
 }
