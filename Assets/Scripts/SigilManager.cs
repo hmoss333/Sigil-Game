@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class SigilManager : MonoBehaviour {
 
-    string currentString;
-    [SerializeField] string checkString;
+    public string currentString;
+    public string checkString;
     public Text sigilName;
 
     public TriggerTest[] triggerList;
@@ -37,7 +37,21 @@ public class SigilManager : MonoBehaviour {
     public void ClearString ()
     {
         currentString = "";
-        sigilName.text = currentString;
+        //sigilName.text = currentString;
+    }
+
+    string RemoveDuplicateLetters(string testString)
+    {
+        string tempString = "";
+
+        foreach (char character in testString)
+        {
+            if (!tempString.Contains(character.ToString()))
+                tempString += character;
+        }
+
+        sigilName.text = tempString;
+        return tempString;
     }
 
     public void CheckTriggers ()
@@ -57,7 +71,7 @@ public class SigilManager : MonoBehaviour {
                     {
                         correctTriggerList.Add(trigger);
                         trigger.isCorrect = true;
-                        trigger.orderNum.text = (j + 1).ToString();
+                        trigger.orderNum.text += (j + 1) + ", ";
                     }
                 }
             }
@@ -66,23 +80,25 @@ public class SigilManager : MonoBehaviour {
 
     public void AddTriggerValues (string values)
     {
-        currentString = currentString + values;
+        //currentString = currentString + values;
+        bool hasMatched = false;
+        char[] tempCurrentChars = values.ToCharArray();
+        //char[] tempCheckChars = checkString.ToCharArray();
 
-        char[] tempCurrentChars = currentString.ToCharArray();
-        char[] tempCheckChars = checkString.ToCharArray();
+        string tempTestString = currentString;
 
-        string tempTestString = "";
-
-        for (int i = 0; i < tempCurrentChars.Length; i++)
+        foreach (char character in checkString)
         {
-            for (int j = 0; j < tempCheckChars.Length; j++)
+            for (int j = 0; j < tempCurrentChars.Length; j++)
             {
-                if (tempCheckChars[j] == tempCurrentChars[i] && !tempTestString.Contains(tempCurrentChars[i].ToString()))
+                if (character == tempCurrentChars[j] && !hasMatched && !tempTestString.Contains(tempCurrentChars[j].ToString()))
                 {
-                    tempTestString = tempTestString + tempCurrentChars[i];
+                    tempTestString = tempTestString + tempCurrentChars[j];
                     Debug.Log(tempTestString);
+                    currentString = tempTestString;
+                    hasMatched = true;
 
-                    if (tempTestString == checkString)
+                    if (currentString == checkString)
                     {
                         sigilName.text = "Correct";
                         checkString = "";
@@ -93,7 +109,10 @@ public class SigilManager : MonoBehaviour {
                             trigger.isCorrect = false;
                         }
                     }
+                    break;
                 }
+                if (hasMatched)
+                    break;
             }
         }
     }
@@ -109,6 +128,7 @@ public class SigilManager : MonoBehaviour {
 
     public void GenerateButton ()
     {
+        checkString = RemoveDuplicateLetters(checkString);
         CheckTriggers();
 
         if (correctTriggerList.Count != 0)

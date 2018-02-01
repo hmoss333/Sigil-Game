@@ -49,7 +49,6 @@ public class TriggerTest : MonoBehaviour {
     {
         if (other.tag == "Line")
         {
-            //image.color = Color.white;
             triggered = false;
         }
     }
