@@ -8,6 +8,7 @@ public class SigilManager : MonoBehaviour {
 
     public string currentString;
     public string checkString;
+    public static string screenShotName;
     public Text sigilName;
 
     public TriggerTest[] triggerList;
@@ -15,9 +16,14 @@ public class SigilManager : MonoBehaviour {
 
     public Button[] keys;
 
+    HiResScreenShots hrss;
+
     // Use this for initialization
     void Start () {
+        hrss = GameObject.FindObjectOfType<HiResScreenShots>();
         triggerList = GameObject.FindObjectsOfType<TriggerTest>();
+
+        screenShotName = "";
 	}
 	
 	// Update is called once per frame
@@ -101,6 +107,7 @@ public class SigilManager : MonoBehaviour {
                     if (currentString == checkString)
                     {
                         sigilName.text = "Correct";
+                        //hrss.takeHiResShot = true;
                         checkString = "";
                         foreach (TriggerTest trigger in correctTriggerList)
                         {
@@ -122,6 +129,7 @@ public class SigilManager : MonoBehaviour {
     public void LetterButton (string character)
     {
         checkString = checkString + character;
+        screenShotName = checkString;
 
         sigilName.text = checkString;
     }
