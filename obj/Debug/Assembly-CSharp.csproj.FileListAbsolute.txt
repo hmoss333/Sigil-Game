@@ -29,3 +29,4 @@ C:\Users\HMoss.DESKTOP-LO6F45S\Documents\GitHub\Sigil\Temp\bin\Debug\UnityEngine
 C:\Users\HMoss.DESKTOP-LO6F45S\Documents\GitHub\Sigil\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 C:\Users\HMoss.DESKTOP-LO6F45S\Documents\GitHub\Sigil\obj\Debug\Assembly-CSharp.dll
 C:\Users\HMoss.DESKTOP-LO6F45S\Documents\GitHub\Sigil\obj\Debug\Assembly-CSharp.pdb
+C:\Users\HMoss.DESKTOP-LO6F45S\Documents\GitHub\Sigil\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache

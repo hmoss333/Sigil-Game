@@ -40,8 +40,8 @@ MonoBehaviour:
     y: 296
     width: 475
     height: 297
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -471,7 +471,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: b69effff709fffff38a0ffff5ca2ffff16a3ffffdea3ffff5cb1ffff16b2ffffdeb2ffff0eb8ffffc2b8ffff8ab9ffffb4d0ffff72d1ffff3ad2ffff22d5ffffdcd5ffffa4d6ffff96f6ffff48f7ffff10f8ffffdefbffff00000000
+    m_ExpandedIDs: ba62ffff7e63ffff4664ffff886affff4c6bffff146cfffff2c4ffffb8c5ffff80c6ffffdefbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -604,7 +604,8 @@ MonoBehaviour:
     m_ScenePaths: []
     m_ShowAllHits: 0
     m_SearchArea: 0
-    m_Folders: []
+    m_Folders:
+    - Assets/Scripts
   m_ViewMode: 0
   m_StartGridSize: 44
   m_LastFolders: []

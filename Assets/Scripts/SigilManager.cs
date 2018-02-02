@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class SigilManager : MonoBehaviour {
 
@@ -13,6 +14,7 @@ public class SigilManager : MonoBehaviour {
 
     public TriggerTest[] triggerList;
     public List<TriggerTest> correctTriggerList;
+    Dictionary<string, Texture> storedSigils;
 
     public Button[] keys;
 
@@ -24,7 +26,10 @@ public class SigilManager : MonoBehaviour {
         triggerList = GameObject.FindObjectsOfType<TriggerTest>();
 
         screenShotName = "";
-	}
+
+        storedSigils = new Dictionary<string, Texture>();
+        StartCoroutine(GetFiles());
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -108,6 +113,7 @@ public class SigilManager : MonoBehaviour {
                     {
                         sigilName.text = "Correct";
                         hrss.takeHiResShot = true;
+                        StartCoroutine(GetFiles());
                         checkString = "";
                         foreach (TriggerTest trigger in correctTriggerList)
                         {
@@ -121,6 +127,28 @@ public class SigilManager : MonoBehaviour {
                 if (hasMatched)
                     break;
             }
+        }
+    }
+
+    IEnumerator GetFiles()
+    {
+        yield return new WaitForSeconds(0.25f);
+        storedSigils.Clear();
+
+        string info = Application.persistentDataPath + "/Sigils/";
+        string[] fileInfo = Directory.GetFiles(info, "*.png");
+        //System.IO.Path.GetFileName(fullPath)
+        for (int i = 0; i < fileInfo.Length; i++)
+        {
+            string url = "file://" + fileInfo[i];
+
+            WWW www = new WWW(url);
+
+            // Wait for download to complete
+            yield return www;
+
+            storedSigils.Add(fileInfo[i], www.texture);
+            Debug.Log(fileInfo[i].ToString());
         }
     }
 
