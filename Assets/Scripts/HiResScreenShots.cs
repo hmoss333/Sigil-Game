@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class HiResScreenShots : MonoBehaviour {
 
@@ -20,13 +21,18 @@ public class HiResScreenShots : MonoBehaviour {
         sm = GameObject.FindObjectOfType<SigilManager>();
     }
 
-    public static string ScreenShotName(int width, int height)
+    public static string ScreenShotName(string sigilName)//int width, int height)
     {
-        return string.Format("{0}/Screenshots/sigil_{1}.png",
-                             Application.dataPath,
-                             //width, height,
-                             SigilManager.screenShotName);
-                             //System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss"));
+        string dir = Application.persistentDataPath + "/Sigils";
+
+        if (!Directory.Exists(dir))
+        {
+            System.IO.Directory.CreateDirectory(dir);
+        }
+
+        return string.Format("{0}/sigil_{1}.png",
+                                dir,
+                                sigilName);
     }
 
     public void TakeHiResShot()
@@ -36,7 +42,7 @@ public class HiResScreenShots : MonoBehaviour {
 
     void LateUpdate()
     {
-        //takeHiResShot |= Input.GetKeyDown("k");
+        takeHiResShot |= Input.GetKeyDown("k");
         if (takeHiResShot)
         {
             RenderTexture rt = new RenderTexture(resWidth, resHeight, 24);
@@ -49,7 +55,7 @@ public class HiResScreenShots : MonoBehaviour {
             RenderTexture.active = null; // JC: added to avoid errors
             Destroy(rt);
             byte[] bytes = screenShot.EncodeToPNG();
-            string filename = ScreenShotName(resWidth, resHeight);
+            string filename = ScreenShotName(SigilManager.screenShotName);//resWidth, resHeight);
             System.IO.File.WriteAllBytes(filename, bytes);
             Debug.Log(string.Format("Took screenshot to: {0}", filename));
             takeHiResShot = false;

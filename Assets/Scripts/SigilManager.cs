@@ -107,7 +107,7 @@ public class SigilManager : MonoBehaviour {
                     if (currentString == checkString)
                     {
                         sigilName.text = "Correct";
-                        //hrss.takeHiResShot = true;
+                        hrss.takeHiResShot = true;
                         checkString = "";
                         foreach (TriggerTest trigger in correctTriggerList)
                         {
@@ -156,6 +156,7 @@ public class SigilManager : MonoBehaviour {
     {
         checkString = "";
         currentString = "";
+        screenShotName = "";
 
         sigilName.text = checkString;
         foreach (TriggerTest trigger in correctTriggerList)
