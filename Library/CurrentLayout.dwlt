@@ -399,8 +399,8 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -207.2
-    m_HBaseRangeMax: 207.2
+    m_HBaseRangeMin: -235.5
+    m_HBaseRangeMax: 235.5
     m_VBaseRangeMin: -129.5
     m_VBaseRangeMax: 129.5
     m_HAllowExceedBaseRangeMin: 1
@@ -471,7 +471,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 48f3ffff0af4ffffcaf4ffffdefbffff00000000
+    m_ExpandedIDs: 1e55ffffe455ffffa056ffff58dcffff62dcffff72dcffffd6f7ffff8af8ffff4af9ffffdefbffff000000000e2f000040300000443000005a3000007231000010320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
