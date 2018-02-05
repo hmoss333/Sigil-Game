@@ -19,6 +19,13 @@ public class HiResScreenShots : MonoBehaviour {
     {
         camera = GetComponent<Camera>();
         sm = GameObject.FindObjectOfType<SigilManager>();
+
+        string dir = Application.persistentDataPath + "/Sigils";
+
+        if (!Directory.Exists(dir))
+        {
+            System.IO.Directory.CreateDirectory(dir);
+        }
     }
 
     public static string ScreenShotName(string sigilName)//int width, int height)
