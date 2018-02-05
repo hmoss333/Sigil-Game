@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using System.Linq;
 
 public class SigilManager : MonoBehaviour {
 
@@ -15,8 +16,10 @@ public class SigilManager : MonoBehaviour {
     public TriggerTest[] triggerList;
     public List<TriggerTest> correctTriggerList;
     Dictionary<string, Texture> storedSigils;
+    public Dropdown sigilList;
 
-    public Button[] keys;
+    public Image loadingScreen;
+    public RawImage storedImage;
 
     HiResScreenShots hrss;
 
@@ -26,6 +29,8 @@ public class SigilManager : MonoBehaviour {
         triggerList = GameObject.FindObjectsOfType<TriggerTest>();
 
         screenShotName = "";
+        loadingScreen.gameObject.SetActive(true);
+        storedImage.gameObject.SetActive(false);
 
         storedSigils = new Dictionary<string, Texture>();
         StartCoroutine(GetFiles());
@@ -36,18 +41,12 @@ public class SigilManager : MonoBehaviour {
 		
 	}
 
-    //public void AddChar(char character)
-    //{
-    //    if (currentString.Length < 10)
-    //    {
-    //        currentString = currentString + character;
-    //        sigilName.text = currentString;
-    //    }
-    //}
+    //==Generate Trigger Order==//
 
     public void ClearString ()
     {
         currentString = "";
+        storedImage.gameObject.SetActive(false);
         //sigilName.text = currentString;
     }
 
@@ -130,14 +129,20 @@ public class SigilManager : MonoBehaviour {
         }
     }
 
+    //==Image Storage/Recall==//
+
     IEnumerator GetFiles()
     {
-        yield return new WaitForSeconds(0.25f);
+        loadingScreen.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(0.05f);
         storedSigils.Clear();
+        sigilList.ClearOptions();
+
+        List<Dropdown.OptionData> tempOptionData = new List<Dropdown.OptionData>();
 
         string info = Application.persistentDataPath + "/Sigils/";
         string[] fileInfo = Directory.GetFiles(info, "*.png");
-        //System.IO.Path.GetFileName(fullPath)
         for (int i = 0; i < fileInfo.Length; i++)
         {
             string url = "file://" + fileInfo[i];
@@ -147,9 +152,31 @@ public class SigilManager : MonoBehaviour {
             // Wait for download to complete
             yield return www;
 
-            storedSigils.Add(fileInfo[i], www.texture);
-            Debug.Log(fileInfo[i].ToString());
+            string fileName = Path.GetFileName(fileInfo[i]);
+
+            if (!storedSigils.ContainsKey(fileName))
+                storedSigils.Add(fileName, www.texture);
+
+            Dropdown.OptionData newData = new Dropdown.OptionData();
+            newData.text = fileName;
+            //newData.image = Sprite.Create(www.texture, new Rect(0,0, www.texture.width, www.texture.height), new Vector2(0,0)); //not needed. storedSigils already has this reference
+            tempOptionData.Add(newData);
+            Debug.Log(fileName.ToString());
         }
+
+        foreach (Dropdown.OptionData optionData in tempOptionData)
+        {
+            sigilList.options.Add(optionData);
+        }
+
+        loadingScreen.gameObject.SetActive(false);
+    }
+
+    public void LoadSavedImage ()
+    {
+        int tempValue = sigilList.value;
+        storedImage.texture = storedSigils[sigilList.options[tempValue].text];
+        storedImage.gameObject.SetActive(true);
     }
 
     //==Button Inputs==//
