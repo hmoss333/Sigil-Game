@@ -37,7 +37,7 @@ public class HiResScreenShots : MonoBehaviour {
             System.IO.Directory.CreateDirectory(dir);
         }
 
-        return string.Format("{0}/sigil_{1}.png",
+        return string.Format("{0}/{1}.png",
                                 dir,
                                 sigilName);
     }

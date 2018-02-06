@@ -153,7 +153,9 @@ public class SigilManager : MonoBehaviour {
             // Wait for download to complete
             yield return www;
 
-            string fileName = Path.GetFileName(fileInfo[i]);
+            string fileName = Path.GetFileNameWithoutExtension(fileInfo[i]);
+            Debug.Log("url: " + url);
+            Debug.Log("filename: " + fileName);
 
             if (!storedSigils.ContainsKey(fileName))
                 storedSigils.Add(fileName, www.texture);
@@ -185,11 +187,12 @@ public class SigilManager : MonoBehaviour {
     public void RemoveSavedImage ()
     {
         int tempValue = sigilList.value;
-        File.Delete(Application.persistentDataPath + "/Sigils/" + sigilList.options[tempValue].text);
+        File.Delete(Application.persistentDataPath + "/Sigils/" + sigilList.options[tempValue].text + ".png");
         storedSigils.Remove(sigilList.options[tempValue].text);
         sigilList.options.RemoveAt(tempValue);
         sigilList.Hide();
         sigilList.RefreshShownValue();
+        ClearString();
     }
 
     //==Button Inputs==//
@@ -223,8 +226,8 @@ public class SigilManager : MonoBehaviour {
     public void ClearButton ()
     {
         checkString = "";
-        currentString = "";
         screenShotName = "";
+        ClearString();
 
         sigilName.text = checkString;
         foreach (TriggerTest trigger in correctTriggerList)
