@@ -209,6 +209,7 @@ public class SigilManager : MonoBehaviour {
     {
         checkString = RemoveDuplicateLetters(checkString);
         CheckTriggers();
+        storedImage.gameObject.SetActive(false);
 
         if (correctTriggerList.Count != 0)
         {
