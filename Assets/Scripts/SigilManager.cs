@@ -170,6 +170,8 @@ public class SigilManager : MonoBehaviour {
             sigilList.options.Add(optionData);
         }
 
+        sigilList.value = 0;
+        sigilList.RefreshShownValue();
         loadingScreen.gameObject.SetActive(false);
     }
 
@@ -178,6 +180,16 @@ public class SigilManager : MonoBehaviour {
         int tempValue = sigilList.value;
         storedImage.texture = storedSigils[sigilList.options[tempValue].text];
         storedImage.gameObject.SetActive(true);
+    }
+
+    public void RemoveSavedImage ()
+    {
+        int tempValue = sigilList.value;
+        File.Delete(Application.persistentDataPath + "/Sigils/" + sigilList.options[tempValue].text);
+        storedSigils.Remove(sigilList.options[tempValue].text);
+        sigilList.options.RemoveAt(tempValue);
+        sigilList.Hide();
+        sigilList.RefreshShownValue();
     }
 
     //==Button Inputs==//

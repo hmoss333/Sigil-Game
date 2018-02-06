@@ -8,7 +8,7 @@ using System.IO;
 public class HiResScreenShots : MonoBehaviour {
 
     Camera camera;
-    SigilManager sm; 
+    //SigilManager sm; 
 
     public int resWidth = 2550;
     public int resHeight = 3300;
@@ -18,7 +18,7 @@ public class HiResScreenShots : MonoBehaviour {
     private void Start()
     {
         camera = GetComponent<Camera>();
-        sm = GameObject.FindObjectOfType<SigilManager>();
+        //sm = GameObject.FindObjectOfType<SigilManager>();
 
         string dir = Application.persistentDataPath + "/Sigils";
 
@@ -62,7 +62,7 @@ public class HiResScreenShots : MonoBehaviour {
             RenderTexture.active = null; // JC: added to avoid errors
             Destroy(rt);
             byte[] bytes = screenShot.EncodeToPNG();
-            string filename = ScreenShotName(SigilManager.screenShotName);//resWidth, resHeight);
+            string filename = ScreenShotName(SigilManager.screenShotName);
             System.IO.File.WriteAllBytes(filename, bytes);
             Debug.Log(string.Format("Took screenshot to: {0}", filename));
             takeHiResShot = false;
