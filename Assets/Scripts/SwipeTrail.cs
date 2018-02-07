@@ -9,11 +9,11 @@ public class SwipeTrail : MonoBehaviour {
     //https://www.youtube.com/watch?v=xlwuGKTyJBs&feature=youtu.be
 
     public GameObject trailPrefab;
-    GameObject thisTrail;
+    public GameObject thisTrail;
     Vector3 startPos;
     Plane objPlane;
 
-    TrailRenderer existingLines;
+    TrailRenderer[] existingLines;
     public List<TrailRenderer> lines;
 
     SigilManager sm;
@@ -61,12 +61,13 @@ public class SwipeTrail : MonoBehaviour {
         //sm.ClearString();
         lines.Clear();
 
-        existingLines = GameObject.FindObjectOfType<TrailRenderer>();
-        lines.Add(existingLines);
+        existingLines = GameObject.FindObjectsOfType<TrailRenderer>();
+        foreach (TrailRenderer tr in existingLines)
+            lines.Add(tr);
 
         foreach (TrailRenderer line in lines)
         {
-            Destroy(line);
+            Destroy(line.gameObject);
         }
     }
 }
