@@ -111,7 +111,7 @@ public class SigilManager : MonoBehaviour {
                     if (currentString == checkString)
                     {
                         sigilName.text = "Correct";
-                        loadingScreen.gameObject.SetActive(true);
+                        //loadingScreen.gameObject.SetActive(true);
                         hrss.takeHiResShot = true;
                         StartCoroutine(GetFiles());
                         checkString = "";

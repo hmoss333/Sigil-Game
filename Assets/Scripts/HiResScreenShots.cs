@@ -54,7 +54,7 @@ public class HiResScreenShots : MonoBehaviour {
         {
             RenderTexture rt = new RenderTexture(resWidth, resHeight, 24);
             camera.targetTexture = rt;
-            Texture2D screenShot = new Texture2D(resWidth/2, resHeight, TextureFormat.RGB24, false);
+            Texture2D screenShot = new Texture2D(resWidth/2, resHeight, TextureFormat.RGBA32, false);
             camera.Render();
             RenderTexture.active = rt;
             screenShot.ReadPixels(new Rect(resWidth/2, 0, resWidth, resHeight), 0, 0);
