@@ -24,7 +24,7 @@ public class TriggerTest : MonoBehaviour {
 
         image = GetComponent<Image>();
         image.color = Color.white;
-        orderNum.text = "";
+        //orderNum.text = "";
     }
 	
 	// Update is called once per frame

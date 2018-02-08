@@ -64,6 +64,34 @@ public class SigilManager : MonoBehaviour {
         return tempString;
     }
 
+    string ConvertToInt(string testString)
+    {
+        string numberOrder = "";
+
+        for (int i = 0; i < testString.Length; i++)
+        {
+            if ("AHOV".Contains(testString[i]))
+                numberOrder += "1";
+            if ("BIPW".Contains(testString[i]))
+                numberOrder += "2";
+            if ("CJQX".Contains(testString[i]))
+                numberOrder += "3";
+            if ("DKRY".Contains(testString[i]))
+                numberOrder += "4";
+            if ("ELSZ".Contains(testString[i]))
+                numberOrder += "5";
+            if ("FMT".Contains(testString[i]))
+                numberOrder += "6";
+            if ("GNU".Contains(testString[i]))
+                numberOrder += "7";
+
+            if (i < testString.Length - 1)
+                numberOrder += ", ";
+        }
+
+        return numberOrder;
+    }
+
     public void CheckTriggers ()
     {
         correctTriggerList.Clear();
@@ -81,7 +109,7 @@ public class SigilManager : MonoBehaviour {
                     {
                         correctTriggerList.Add(trigger);
                         trigger.isCorrect = true;
-                        trigger.orderNum.text += (j + 1) + ", ";
+                        //trigger.orderNum.text += (j + 1) + ", ";
                     }
                 }
             }
@@ -118,7 +146,7 @@ public class SigilManager : MonoBehaviour {
                         foreach (TriggerTest trigger in correctTriggerList)
                         {
                             trigger.image.color = Color.white;
-                            trigger.orderNum.text = "";
+                            //trigger.orderNum.text = "";
                             trigger.isCorrect = false;
                         }
                     }
@@ -208,6 +236,7 @@ public class SigilManager : MonoBehaviour {
     public void GenerateButton ()
     {
         checkString = RemoveDuplicateLetters(checkString);
+        sigilName.text = ConvertToInt(checkString);
         CheckTriggers();
         storedImage.gameObject.SetActive(false);
 
@@ -234,7 +263,7 @@ public class SigilManager : MonoBehaviour {
         foreach (TriggerTest trigger in correctTriggerList)
         {
             trigger.image.color = Color.white;
-            trigger.orderNum.text = "";
+            //trigger.orderNum.text = "";
             trigger.isCorrect = false;
         }
         CheckTriggers();
