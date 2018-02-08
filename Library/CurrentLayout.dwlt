@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 442}
   m_MaxSize: {x: 4004, y: 8042}
   vertical: 1
-  controlID: 51
+  controlID: 74
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 913, y: 563}
   m_MaxSize: {x: 22008, y: 14042}
   vertical: 1
-  controlID: 48
+  controlID: 95
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_MinSize: {x: 913, y: 442}
   m_MaxSize: {x: 22008, y: 10021}
   vertical: 0
-  controlID: 49
+  controlID: 96
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_MinSize: {x: 638, y: 442}
   m_MaxSize: {x: 18008, y: 10021}
   vertical: 0
-  controlID: 50
+  controlID: 97
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -471,26 +471,26 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 2685ffffea85ffffa086ffff929affff569bffff0c9cffffdefbffff000000006e2700008028000094290000a0290000
+    m_ExpandedIDs: a605ffff7606ffff4e07ffff5a07ffff5e07ffff0a0affffda0affffb20bffffbe0bffffc20bffff1e14ffffee14ffffca15ffffda15ffffe215ffff581effff2a1fffff0220ffff0e20ffff1220ffffc622ffff9823ffff7024ffff7c24ffff8024ffff5649ffff2c4affff084bffff184bffff204bffffec8effff5c91ffffec95ffffc4a1ffffb2a3ffffc8a4ffff30a7fffffaabffff26afffffa6d8ffff26daffff5cefffffe6f1ffff02f3ffff12fbffffdefbffff000000008a430000b8430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Trigger (3)
-      m_OriginalName: Trigger (3)
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 10382
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 12}
     m_SearchString: 
   m_ExpandedScenes:
-  - Test
+  - SplashScreen
   m_CurrenRootInstanceID: 0
   m_Locked: 1
   m_CurrentSortingName: TransformSorting
@@ -605,7 +605,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scripts/Gameplay
   m_ViewMode: 0
   m_StartGridSize: 44
   m_LastFolders: []
@@ -644,7 +644,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ba240000e4240000f6240000fc24000014250000382a0000
+    m_ExpandedIDs: 00000000ba240000e4240000f6240000fc24000014250000382a00004c2a00005a2a0000602a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

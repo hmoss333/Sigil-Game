@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.IO;
 using System.Linq;
@@ -18,7 +19,6 @@ public class SigilManager : MonoBehaviour {
     Dictionary<string, Texture> storedSigils;
     public Dropdown sigilList;
 
-    public Image loadingScreen;
     public RawImage storedImage;
 
     HiResScreenShots hrss;
@@ -29,7 +29,6 @@ public class SigilManager : MonoBehaviour {
         triggerList = GameObject.FindObjectsOfType<TriggerTest>();
 
         screenShotName = "";
-        loadingScreen.gameObject.SetActive(true);
         storedImage.gameObject.SetActive(false);
 
         storedSigils = new Dictionary<string, Texture>();
@@ -41,8 +40,8 @@ public class SigilManager : MonoBehaviour {
 		
 	}
 
-    //==Generate Trigger Order==//
 
+    //==Generate Trigger Order==//
     public void ClearString ()
     {
         currentString = "";
@@ -135,34 +134,61 @@ public class SigilManager : MonoBehaviour {
                     Debug.Log(tempTestString);
                     currentString = tempTestString;
                     hasMatched = true;
-
-                    if (currentString == checkString)
-                    {
-                        sigilName.text = "Correct";
-                        //loadingScreen.gameObject.SetActive(true);
-                        hrss.takeHiResShot = true;
-                        StartCoroutine(GetFiles());
-                        checkString = "";
-                        foreach (TriggerTest trigger in correctTriggerList)
-                        {
-                            trigger.image.color = Color.white;
-                            //trigger.orderNum.text = "";
-                            trigger.isCorrect = false;
-                        }
-                    }
                     break;
                 }
                 if (hasMatched)
                     break;
             }
+            if (hasMatched)
+                break;
+        }
+
+        if (currentString == checkString)
+        {
+            //StartCoroutine(ShowLoadingScreen());
+            SceneManager.LoadSceneAsync("LoadingScreen", LoadSceneMode.Additive);
+
+            sigilName.text = "Correct";
+            hrss.takeHiResShot = true;
+            StartCoroutine(GetFiles());
+            checkString = "";
+
+            foreach (TriggerTest trigger in correctTriggerList)
+            {
+                trigger.image.color = Color.white;
+                //trigger.orderNum.text = "";
+                trigger.isCorrect = false;
+            }
+
+            StartCoroutine(CloseLoadingScreen());
         }
     }
 
-    //==Image Storage/Recall==//
+    IEnumerator ShowLoadingScreen()
+    {
+        yield return new WaitForSeconds(0.25f);
+        if (!SceneManager.GetSceneByName("LoadingScreen").isLoaded)
+            SceneManager.LoadSceneAsync("LoadingScreen", LoadSceneMode.Additive);
 
+        Debug.Log("Loaded scene");
+    }
+
+    IEnumerator CloseLoadingScreen()
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (SceneManager.GetSceneByName("LoadingScreen").isLoaded)
+            SceneManager.UnloadSceneAsync("LoadingScreen");
+
+        Debug.Log("Unloaded scene");
+    }
+
+
+    //==Image Storage/Recall==//
     IEnumerator GetFiles()
     {
-        loadingScreen.gameObject.SetActive(true);
+        //loadingScreen.gameObject.SetActive(true);
+        //if (SceneManager.GetActiveScene().name != "LoadingScreen")
+        //    SceneManager.LoadSceneAsync("LoadingScreen", LoadSceneMode.Additive);
 
         yield return new WaitForSeconds(0.05f);
         storedSigils.Clear();
@@ -182,8 +208,6 @@ public class SigilManager : MonoBehaviour {
             yield return www;
 
             string fileName = Path.GetFileNameWithoutExtension(fileInfo[i]);
-            Debug.Log("url: " + url);
-            Debug.Log("filename: " + fileName);
 
             if (!storedSigils.ContainsKey(fileName))
                 storedSigils.Add(fileName, www.texture);
@@ -192,7 +216,6 @@ public class SigilManager : MonoBehaviour {
             newData.text = fileName;
             //newData.image = Sprite.Create(www.texture, new Rect(0,0, www.texture.width, www.texture.height), new Vector2(0,0)); //not needed. storedSigils already has this reference
             tempOptionData.Add(newData);
-            Debug.Log(fileName.ToString());
         }
 
         foreach (Dropdown.OptionData optionData in tempOptionData)
@@ -202,7 +225,10 @@ public class SigilManager : MonoBehaviour {
 
         sigilList.value = 0;
         sigilList.RefreshShownValue();
-        loadingScreen.gameObject.SetActive(false);
+        //loadingScreen.gameObject.SetActive(false);
+
+        //if (SceneManager.GetSceneByName("LoadingScreen").isLoaded)
+        //    SceneManager.UnloadSceneAsync("LoadingScreen");
     }
 
     public void LoadSavedImage ()
@@ -223,8 +249,8 @@ public class SigilManager : MonoBehaviour {
         ClearString();
     }
 
-    //==Button Inputs==//
 
+    //==Button Inputs==//
     public void LetterButton (string character)
     {
         checkString = checkString + character;

@@ -7,8 +7,7 @@ using System.IO;
 
 public class HiResScreenShots : MonoBehaviour {
 
-    Camera camera;
-    //SigilManager sm; 
+    Camera camera; 
 
     public int resWidth = 2550;
     public int resHeight = 3300;
@@ -18,7 +17,6 @@ public class HiResScreenShots : MonoBehaviour {
     private void Start()
     {
         camera = GetComponent<Camera>();
-        //sm = GameObject.FindObjectOfType<SigilManager>();
 
         string dir = Application.persistentDataPath + "/Sigils";
 

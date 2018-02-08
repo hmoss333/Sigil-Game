@@ -46,10 +46,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\HiResScreenShots.cs" />
-     <Compile Include="Assets\Scripts\SigilManager.cs" />
-     <Compile Include="Assets\Scripts\SwipeTrail.cs" />
-     <Compile Include="Assets\Scripts\TriggerTest.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\HiResScreenShots.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\SigilManager.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\SwipeTrail.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\TriggerTest.cs" />
+     <Compile Include="Assets\Scripts\LoadingScreen\LoadingScreen.cs" />
+     <Compile Include="Assets\Scripts\SplashScreen\SplashScreen.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity 5.6.1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
