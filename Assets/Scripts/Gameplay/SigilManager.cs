@@ -149,7 +149,8 @@ public class SigilManager : MonoBehaviour {
             SceneManager.LoadSceneAsync("LoadingScreen", LoadSceneMode.Additive);
 
             sigilName.text = "Correct";
-            hrss.takeHiResShot = true;
+            //hrss.takeHiResShot = true;
+            StartCoroutine(TakeScreenshot());
             StartCoroutine(GetFiles());
             checkString = "";
 
@@ -164,18 +165,15 @@ public class SigilManager : MonoBehaviour {
         }
     }
 
-    IEnumerator ShowLoadingScreen()
+    IEnumerator TakeScreenshot ()
     {
-        yield return new WaitForSeconds(0.25f);
-        if (!SceneManager.GetSceneByName("LoadingScreen").isLoaded)
-            SceneManager.LoadSceneAsync("LoadingScreen", LoadSceneMode.Additive);
-
-        Debug.Log("Loaded scene");
+        yield return new WaitForSeconds(0.1f);
+        hrss.takeHiResShot = true;
     }
 
     IEnumerator CloseLoadingScreen()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.45f);
         if (SceneManager.GetSceneByName("LoadingScreen").isLoaded)
             SceneManager.UnloadSceneAsync("LoadingScreen");
 
