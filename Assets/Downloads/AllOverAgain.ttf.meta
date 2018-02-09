@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 48aa2e7b53cca7c47baad1d68d0aff04
+timeCreated: 1518193872
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: All Over Again
+  fontNames:
+  - All Over Again
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 9378686692149cf439bdf6280c37d582
+timeCreated: 1518193872
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: DK Rat Infested Mailbox
+  fontNames:
+  - DK Rat Infested Mailbox
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

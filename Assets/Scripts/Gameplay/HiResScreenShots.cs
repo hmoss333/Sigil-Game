@@ -53,6 +53,7 @@ public class HiResScreenShots : MonoBehaviour {
             RenderTexture rt = new RenderTexture(resWidth, resHeight, 24);
             camera.targetTexture = rt;
             Texture2D screenShot = new Texture2D(resWidth/2, resHeight, TextureFormat.RGBA32, false);
+            camera.cullingMask &= ~(1 << LayerMask.NameToLayer("UI")); //Hide UI layer
             camera.Render();
             RenderTexture.active = rt;
             screenShot.ReadPixels(new Rect(resWidth/2, 0, resWidth, resHeight), 0, 0);
@@ -63,6 +64,7 @@ public class HiResScreenShots : MonoBehaviour {
             string filename = ScreenShotName(SigilManager.screenShotName);
             System.IO.File.WriteAllBytes(filename, bytes);
             Debug.Log(string.Format("Took screenshot to: {0}", filename));
+            camera.cullingMask |= 1 << LayerMask.NameToLayer("UI"); //Show UI layer
             takeHiResShot = false;
         }
     }

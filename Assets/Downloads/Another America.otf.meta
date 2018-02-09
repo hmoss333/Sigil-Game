@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 86fbc65baba93a54e9ca8f00005f7253
+timeCreated: 1518193872
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Another America
+  fontNames:
+  - Another America
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0dc3f431b9002fb4fbef8075f9bf9f1d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

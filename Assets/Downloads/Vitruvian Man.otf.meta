@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: ba7dfbd9485a8b54482c9e171f6da9f0
+timeCreated: 1518193872
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Vitruvian Man
+  fontNames:
+  - Vitruvian Man
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -52,6 +52,8 @@
      <Compile Include="Assets\Scripts\Gameplay\TriggerTest.cs" />
      <Compile Include="Assets\Scripts\LoadingScreen\LoadingScreen.cs" />
      <Compile Include="Assets\Scripts\SplashScreen\SplashScreen.cs" />
+     <None Include="Assets\Downloads\Another America (Personal Use) - READ ME.txt" />
+     <None Include="Assets\Downloads\font info.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity 5.6.1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

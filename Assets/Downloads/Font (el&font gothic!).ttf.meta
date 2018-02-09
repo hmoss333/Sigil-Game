@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 13bb3c3ef11c3ee4d98fc61718533b5a
+timeCreated: 1518193872
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: el&font gohtic!
+  fontNames:
+  - el&font gohtic!
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
