@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: cab5baaeb518e8140bf65e912a577902
+timeCreated: 1518199225
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Who asks Satan
+  fontNames:
+  - Who asks Satan
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

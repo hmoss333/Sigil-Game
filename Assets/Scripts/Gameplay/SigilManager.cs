@@ -188,7 +188,7 @@ public class SigilManager : MonoBehaviour {
         //if (SceneManager.GetActiveScene().name != "LoadingScreen")
         //    SceneManager.LoadSceneAsync("LoadingScreen", LoadSceneMode.Additive);
 
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.15f);
         storedSigils.Clear();
         sigilList.ClearOptions();
 
