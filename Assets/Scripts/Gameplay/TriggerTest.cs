@@ -39,7 +39,7 @@ public class TriggerTest : MonoBehaviour {
             //image.color = Color.red;
             if (isCorrect && !triggered)
             {
-                sm.AddTriggerValues(letters);
+                sm.TestTriggerValues(letters);
                 triggered = true;
             }
         }

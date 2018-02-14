@@ -58,7 +58,7 @@ public class SwipeTrail : MonoBehaviour {
 
     void DestroyLines ()
     {
-        //sm.ClearString();
+        sm.ClearString();
         lines.Clear();
 
         existingLines = GameObject.FindObjectsOfType<TrailRenderer>();

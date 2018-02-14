@@ -115,7 +115,7 @@ public class SigilManager : MonoBehaviour {
         }
     }
 
-    public void AddTriggerValues (string values)
+    public void TestTriggerValues (string values)
     {
         //currentString = currentString + values;
         bool hasMatched = false;

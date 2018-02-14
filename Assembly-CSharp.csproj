@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Gameplay\ExitButton.cs" />
      <Compile Include="Assets\Scripts\Gameplay\HiResScreenShots.cs" />
      <Compile Include="Assets\Scripts\Gameplay\SigilManager.cs" />
      <Compile Include="Assets\Scripts\Gameplay\SwipeTrail.cs" />
