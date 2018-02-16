@@ -18,8 +18,15 @@ public class SigilManager : MonoBehaviour {
     public List<TriggerTest> correctTriggerList;
     Dictionary<string, Texture> storedSigils;
     public Dropdown sigilList;
-
     public RawImage storedImage;
+
+    public AudioSource audioSource;
+    public AudioClip keyboardSound;
+    public AudioClip generateSound;
+    public AudioClip clearSound;
+    public AudioClip selectImageSound;
+    public AudioClip deleteSound;
+    public AudioClip screenshotSound;
 
     HiResScreenShots hrss;
 
@@ -149,7 +156,7 @@ public class SigilManager : MonoBehaviour {
             SceneManager.LoadSceneAsync("LoadingScreen", LoadSceneMode.Additive);
 
             sigilName.text = "Correct";
-            //hrss.takeHiResShot = true;
+            PlayAudio(screenshotSound);
             StartCoroutine(TakeScreenshot());
             StartCoroutine(GetFiles());
             checkString = "";
@@ -231,6 +238,8 @@ public class SigilManager : MonoBehaviour {
 
     public void LoadSavedImage ()
     {
+        PlayAudio(selectImageSound);
+
         int tempValue = sigilList.value;
         storedImage.texture = storedSigils[sigilList.options[tempValue].text];
         storedImage.gameObject.SetActive(true);
@@ -238,6 +247,8 @@ public class SigilManager : MonoBehaviour {
 
     public void RemoveSavedImage ()
     {
+        PlayAudio(deleteSound);
+
         int tempValue = sigilList.value;
         File.Delete(Application.persistentDataPath + "/Sigils/" + sigilList.options[tempValue].text + ".png");
         storedSigils.Remove(sigilList.options[tempValue].text);
@@ -251,6 +262,8 @@ public class SigilManager : MonoBehaviour {
     //==Button Inputs==//
     public void LetterButton (string character)
     {
+        PlayAudio(keyboardSound);
+
         checkString = checkString + character;
         screenShotName = checkString;
 
@@ -259,26 +272,30 @@ public class SigilManager : MonoBehaviour {
 
     public void GenerateButton ()
     {
+        PlayAudio(generateSound);
+
         checkString = RemoveDuplicateLetters(checkString);
         sigilName.text = ConvertToInt(checkString);
         CheckTriggers();
         storedImage.gameObject.SetActive(false);
 
-        if (correctTriggerList.Count != 0)
-        {
-            foreach (TriggerTest trigger in correctTriggerList)
-            {
-                trigger.GetComponent<Image>().color = Color.green;
-            }
-        }
-        else
-        {
-            Debug.Log("Something went wrong");
-        }
+        //if (correctTriggerList.Count != 0)
+        //{
+        //    foreach (TriggerTest trigger in correctTriggerList)
+        //    {
+        //        trigger.GetComponent<Image>().color = Color.green;
+        //    }
+        //}
+        //else
+        //{
+        //    Debug.Log("Something went wrong");
+        //}
     }
 
     public void ClearButton ()
     {
+        PlayAudio(clearSound);
+
         checkString = "";
         screenShotName = "";
         ClearString();
@@ -291,5 +308,12 @@ public class SigilManager : MonoBehaviour {
             trigger.isCorrect = false;
         }
         CheckTriggers();
+    }
+
+    void PlayAudio(AudioClip audioClip)
+    {
+        audioSource.Stop();
+        audioSource.clip = audioClip;
+        audioSource.Play();
     }
 }

@@ -7,6 +7,10 @@ public class ExitButton : MonoBehaviour {
     public GameObject exitPanel;
 
     bool menuOpen;
+
+    public AudioSource audioSource;
+    public AudioClip exitSound;
+    public AudioClip returnSound;
     
     // Use this for initialization
 	void Start () {
@@ -23,6 +27,7 @@ public class ExitButton : MonoBehaviour {
     {
         if (!menuOpen)
         {
+            PlayAudio(exitSound);
             exitPanel.SetActive(true);
             menuOpen = true;
         }
@@ -35,7 +40,15 @@ public class ExitButton : MonoBehaviour {
 
     public void No ()
     {
+        PlayAudio(returnSound);
         exitPanel.SetActive(false);
         menuOpen = false;
+    }
+
+    void PlayAudio(AudioClip audioClip)
+    {
+        audioSource.Stop();
+        audioSource.clip = audioClip;
+        audioSource.Play();
     }
 }
