@@ -274,10 +274,22 @@ public class SigilManager : MonoBehaviour {
     {
         PlayAudio(generateSound);
 
-        checkString = RemoveDuplicateLetters(checkString);
-        sigilName.text = ConvertToInt(checkString);
-        CheckTriggers();
-        storedImage.gameObject.SetActive(false);
+        if (checkString == "POOP")
+        {
+            storedImage.texture = (Texture)Resources.Load("DogHead");
+            storedImage.gameObject.SetActive(true);
+            checkString = "";
+            currentString = "";
+            sigilName.text = "";
+        }
+
+        else
+        {
+            checkString = RemoveDuplicateLetters(checkString);
+            sigilName.text = ConvertToInt(checkString);
+            CheckTriggers();
+            storedImage.gameObject.SetActive(false);
+        }
 
         //if (correctTriggerList.Count != 0)
         //{
