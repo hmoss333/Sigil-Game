@@ -66,7 +66,20 @@ public class SigilManager : MonoBehaviour {
                 tempString += character;
         }
 
-        sigilName.text = tempString;
+        return tempString;
+    }
+
+    string RemoveVowels(string testString)
+    {
+        string tempString = "";
+        string vowels = "AEIOU";
+
+        foreach (char character in testString)
+        {
+            if (!vowels.Contains(character.ToString()))
+                tempString += character;
+        }
+
         return tempString;
     }
 
@@ -274,6 +287,7 @@ public class SigilManager : MonoBehaviour {
     {
         PlayAudio(generateSound);
 
+        //Dog Easter Egg
         if (checkString == "POOP")
         {
             storedImage.texture = (Texture)Resources.Load("DogHead");
@@ -286,22 +300,11 @@ public class SigilManager : MonoBehaviour {
         else
         {
             checkString = RemoveDuplicateLetters(checkString);
+            checkString = RemoveVowels(checkString);
             sigilName.text = ConvertToInt(checkString);
             CheckTriggers();
             storedImage.gameObject.SetActive(false);
         }
-
-        //if (correctTriggerList.Count != 0)
-        //{
-        //    foreach (TriggerTest trigger in correctTriggerList)
-        //    {
-        //        trigger.GetComponent<Image>().color = Color.green;
-        //    }
-        //}
-        //else
-        //{
-        //    Debug.Log("Something went wrong");
-        //}
     }
 
     public void ClearButton ()
