@@ -176,7 +176,7 @@ public class SigilManager : MonoBehaviour {
 
             foreach (TriggerTest trigger in correctTriggerList)
             {
-                trigger.image.color = Color.white;
+                //trigger.image.color = Color.white;
                 //trigger.orderNum.text = "";
                 trigger.isCorrect = false;
             }
@@ -318,7 +318,7 @@ public class SigilManager : MonoBehaviour {
         sigilName.text = checkString;
         foreach (TriggerTest trigger in correctTriggerList)
         {
-            trigger.image.color = Color.white;
+            //trigger.image.color = Color.white;
             //trigger.orderNum.text = "";
             trigger.isCorrect = false;
         }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TriggerTest : MonoBehaviour {
 
     //Renderer renderer;
-    [System.NonSerialized] public Image image;
+    //[System.NonSerialized] public Image image;
     SigilManager sm;
     public Text orderNum;
 
@@ -22,8 +22,8 @@ public class TriggerTest : MonoBehaviour {
         //renderer = GetComponent<Renderer>();
         //renderer.material.color = Color.white;
 
-        image = GetComponent<Image>();
-        image.color = Color.white;
+        //image = GetComponent<Image>();
+        //image.color = Color.white;
         //orderNum.text = "";
     }
 	
