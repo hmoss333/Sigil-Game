@@ -339,6 +339,7 @@
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Gameplay/ExitButton.cs"
 "Assets/Scripts/Gameplay/HiResScreenShots.cs"
+"Assets/Scripts/Gameplay/MainMenu.cs"
 "Assets/Scripts/Gameplay/SigilManager.cs"
 "Assets/Scripts/Gameplay/SwipeTrail.cs"
 "Assets/Scripts/Gameplay/TriggerTest.cs"
