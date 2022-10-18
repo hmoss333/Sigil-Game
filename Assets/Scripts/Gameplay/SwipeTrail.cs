@@ -8,6 +8,7 @@ public class SwipeTrail : MonoBehaviour {
     //https://www.youtube.com/watch?v=cHVZ0SYIHkI
     //https://www.youtube.com/watch?v=xlwuGKTyJBs&feature=youtu.be
 
+    public Camera cam;
     public GameObject trailPrefab;
     public GameObject thisTrail;
     Vector3 startPos;
@@ -20,7 +21,7 @@ public class SwipeTrail : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        objPlane = new Plane(Camera.main.transform.forward *= 1, this.transform.position);
+        objPlane = new Plane(cam.transform.forward *= 1, this.transform.position);
 
         sm = GameObject.FindObjectOfType<SigilManager>();
 	}
@@ -35,7 +36,7 @@ public class SwipeTrail : MonoBehaviour {
             thisTrail = (GameObject)Instantiate(trailPrefab, 
                                                     this.transform.position, 
                                                     Quaternion.identity);
-            Ray mRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray mRay = cam.ScreenPointToRay(Input.mousePosition);
             float rayDistance;
             if (objPlane.Raycast(mRay, out rayDistance))
                 startPos = mRay.GetPoint(rayDistance);
@@ -43,7 +44,7 @@ public class SwipeTrail : MonoBehaviour {
         else if (((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) || 
             Input.GetMouseButton(0)))
         {
-            Ray mRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray mRay = cam.ScreenPointToRay(Input.mousePosition);
             float rayDistance;
             if (objPlane.Raycast(mRay, out rayDistance))
                 thisTrail.transform.position = mRay.GetPoint(rayDistance);

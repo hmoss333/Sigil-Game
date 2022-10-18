@@ -62,8 +62,8 @@
     <Compile Include="Assets/Scripts/Gameplay/ExitButton.cs" />
     <Compile Include="Assets/Scripts/Gameplay/SigilManager.cs" />
     <Compile Include="Assets/Scripts/LoadingScreen/LoadingScreen.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/TriggerTest.cs" />
     <Compile Include="Assets/Scripts/Gameplay/MainMenu.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/TriggerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

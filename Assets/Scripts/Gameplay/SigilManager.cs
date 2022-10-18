@@ -20,13 +20,13 @@ public class SigilManager : MonoBehaviour {
     public Dropdown sigilList;
     public RawImage storedImage;
 
-    public AudioSource audioSource;
-    public AudioClip keyboardSound;
-    public AudioClip generateSound;
-    public AudioClip clearSound;
-    public AudioClip selectImageSound;
-    public AudioClip deleteSound;
-    public AudioClip screenshotSound;
+    //public AudioSource audioSource;
+    //public AudioClip keyboardSound;
+    //public AudioClip generateSound;
+    //public AudioClip clearSound;
+    //public AudioClip selectImageSound;
+    //public AudioClip deleteSound;
+    //public AudioClip screenshotSound;
 
     HiResScreenShots hrss;
 
@@ -41,11 +41,6 @@ public class SigilManager : MonoBehaviour {
         storedSigils = new Dictionary<string, Texture>();
         StartCoroutine(GetFiles());
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 
     //==Generate Trigger Order==//
@@ -169,7 +164,7 @@ public class SigilManager : MonoBehaviour {
             SceneManager.LoadSceneAsync("LoadingScreen", LoadSceneMode.Additive);
 
             sigilName.text = "Correct";
-            PlayAudio(screenshotSound);
+            //PlayAudio(screenshotSound);
             StartCoroutine(TakeScreenshot());
             StartCoroutine(GetFiles());
             checkString = "";
@@ -188,7 +183,7 @@ public class SigilManager : MonoBehaviour {
     IEnumerator TakeScreenshot ()
     {
         yield return new WaitForSeconds(0.1f);
-        hrss.takeHiResShot = true;
+        hrss.TakeHiResShot();
     }
 
     IEnumerator CloseLoadingScreen()
@@ -251,31 +246,36 @@ public class SigilManager : MonoBehaviour {
 
     public void LoadSavedImage ()
     {
-        PlayAudio(selectImageSound);
+        if (storedSigils.Count > 0)
+        {
+            //PlayAudio(selectImageSound);
 
-        int tempValue = sigilList.value;
-        storedImage.texture = storedSigils[sigilList.options[tempValue].text];
-        storedImage.gameObject.SetActive(true);
+            int tempValue = sigilList.value;
+            storedImage.texture = storedSigils[sigilList.options[tempValue].text];
+            storedImage.gameObject.SetActive(true);
+        }
     }
 
     public void RemoveSavedImage ()
     {
-        PlayAudio(deleteSound);
-
-        int tempValue = sigilList.value;
-        File.Delete(Application.persistentDataPath + "/Sigils/" + sigilList.options[tempValue].text + ".png");
-        storedSigils.Remove(sigilList.options[tempValue].text);
-        sigilList.options.RemoveAt(tempValue);
-        sigilList.Hide();
-        sigilList.RefreshShownValue();
-        ClearString();
+        //PlayAudio(deleteSound);
+        if (storedSigils.Count > 0)
+        {
+            int tempValue = sigilList.value;
+            File.Delete(Application.persistentDataPath + "/Sigils/" + sigilList.options[tempValue].text + ".png");
+            storedSigils.Remove(sigilList.options[tempValue].text);
+            sigilList.options.RemoveAt(tempValue);
+            sigilList.Hide();
+            sigilList.RefreshShownValue();
+            ClearString();
+        }
     }
 
 
     //==Button Inputs==//
     public void LetterButton (string character)
     {
-        PlayAudio(keyboardSound);
+        //PlayAudio(keyboardSound);
 
         checkString = checkString + character;
         screenShotName = checkString;
@@ -285,7 +285,7 @@ public class SigilManager : MonoBehaviour {
 
     public void GenerateButton ()
     {
-        PlayAudio(generateSound);
+        //PlayAudio(generateSound);
 
         //Dog Easter Egg
         if (checkString == "POOP")
@@ -309,7 +309,7 @@ public class SigilManager : MonoBehaviour {
 
     public void ClearButton ()
     {
-        PlayAudio(clearSound);
+        //PlayAudio(clearSound);
 
         checkString = "";
         screenShotName = "";
@@ -325,10 +325,10 @@ public class SigilManager : MonoBehaviour {
         CheckTriggers();
     }
 
-    void PlayAudio(AudioClip audioClip)
-    {
-        audioSource.Stop();
-        audioSource.clip = audioClip;
-        audioSource.Play();
-    }
+    //void PlayAudio(AudioClip audioClip)
+    //{
+    //    audioSource.Stop();
+    //    audioSource.clip = audioClip;
+    //    audioSource.Play();
+    //}
 }
