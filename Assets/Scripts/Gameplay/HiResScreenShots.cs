@@ -29,26 +29,33 @@ public class HiResScreenShots : MonoBehaviour {
 
     public void TakeHiResShot()
     {
+        //Generate a new, temporary render texture
         RenderTexture rt = new RenderTexture(resWidth, resHeight, 24);
         camera.targetTexture = rt;
 
+        //Sssign the current camera view to the render texture
         Texture2D screenShot = new Texture2D(resWidth, resHeight, TextureFormat.RGBA32, false);
         camera.cullingMask &= ~(1 << LayerMask.NameToLayer("UI")); //Hide UI layer
         camera.Render();
-
         RenderTexture.active = rt;
-        screenShot.ReadPixels(new Rect(0, 0, resWidth, resHeight), 0, 0); //this is not reading the pixels properly and causing the saved image to be skewed
 
+        //Save screenshot data of renderTexture using offsets
+        screenShot.ReadPixels(new Rect(0, 0, resWidth, resHeight), 0, 0);
+
+        //Clear all temporary textures
         camera.targetTexture = null;
         RenderTexture.active = null; // JC: added to avoid errors
         Destroy(rt);
 
+        //Create byte buffer for screenshot data
         byte[] bytes = screenShot.EncodeToPNG();
 
+        //Save screenshot byte data to destination + file name
         string filename = SigilManager.screenShotName + ".png";
         string filePath = dir + filename;
         System.IO.File.WriteAllBytes(filePath, bytes);
 
+        //Log confirmation and UI cleanup
         Debug.Log(string.Format("Took screenshot to: {0}", filePath));
         camera.cullingMask |= 1 << LayerMask.NameToLayer("UI"); //Show UI layer
     }
