@@ -8,7 +8,6 @@ using System.IO;
 public class HiResScreenShots : MonoBehaviour {
 
     Camera camera;
-
     public int resWidth;// = 2550;
     public int resHeight;// = 3300;
 

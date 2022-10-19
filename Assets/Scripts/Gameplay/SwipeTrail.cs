@@ -33,10 +33,9 @@ public class SwipeTrail : MonoBehaviour {
         {
             DestroyLines();
 
-            thisTrail = (GameObject)Instantiate(trailPrefab, 
-                                                    this.transform.position, 
-                                                    Quaternion.identity);
             Ray mRay = cam.ScreenPointToRay(Input.mousePosition);
+            thisTrail = (GameObject)Instantiate(trailPrefab, mRay.origin, Quaternion.identity);
+
             float rayDistance;
             if (objPlane.Raycast(mRay, out rayDistance))
                 startPos = mRay.GetPoint(rayDistance);
