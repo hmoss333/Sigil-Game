@@ -11,6 +11,12 @@ public class MainMenu : MonoBehaviour
     {
         MainMenuParent.SetActive(true);
         AboutMenu.SetActive(false);
+
+        if (PlayerPrefs.GetInt("firstLaunch", 0) == 0)
+        {
+            AboutButton();
+            PlayerPrefs.SetInt("firstLaunch", 1);
+        }
     }
 
     public void AboutButton()
@@ -22,17 +28,12 @@ public class MainMenu : MonoBehaviour
     public void CreateButton()
     {
         SceneManager.LoadSceneAsync("LoadingScreen", LoadSceneMode.Additive);
-        SceneManager.LoadSceneAsync("Test_New");
+        SceneManager.LoadSceneAsync("Create");
     }
 
     public void ViewButton()
     {
         //TODO open the local image viewer application and redirect to the Sigil folder
         ///Research the best way to manually save all generated sigils into a viewable format on the local device
-    }
-
-    public void ExitButton()
-    {
-        Application.Quit();
     }
 }

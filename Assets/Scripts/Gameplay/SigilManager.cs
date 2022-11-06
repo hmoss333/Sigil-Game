@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.IO;
 using System.Linq;
+using TMPro;
 
 public class SigilManager : MonoBehaviour {
 
     public string currentString;
     public string checkString;
     public static string screenShotName;
-    public Text sigilName;
+    //public Text sigilName;
 
     public TriggerTest[] triggerList;
     public List<TriggerTest> correctTriggerList;
@@ -28,6 +29,7 @@ public class SigilManager : MonoBehaviour {
     //public AudioClip deleteSound;
     //public AudioClip screenshotSound;
 
+    public TMP_InputField inputField;
     HiResScreenShots hrss;
 
     // Use this for initialization
@@ -48,7 +50,7 @@ public class SigilManager : MonoBehaviour {
     {
         currentString = "";
         storedImage.gameObject.SetActive(false);
-        //sigilName.text = currentString;
+
     }
 
     string RemoveDuplicateLetters(string testString)
@@ -123,7 +125,6 @@ public class SigilManager : MonoBehaviour {
                     {
                         correctTriggerList.Add(trigger);
                         trigger.isCorrect = true;
-                        //trigger.orderNum.text += (j + 1) + ", ";
                     }
                 }
             }
@@ -132,10 +133,8 @@ public class SigilManager : MonoBehaviour {
 
     public void TestTriggerValues (string values)
     {
-        //currentString = currentString + values;
         bool hasMatched = false;
         char[] tempCurrentChars = values.ToCharArray();
-        //char[] tempCheckChars = checkString.ToCharArray();
 
         string tempTestString = currentString;
 
@@ -160,19 +159,14 @@ public class SigilManager : MonoBehaviour {
 
         if (currentString == checkString)
         {
-            //StartCoroutine(ShowLoadingScreen());
             SceneManager.LoadSceneAsync("LoadingScreen", LoadSceneMode.Additive);
 
-            sigilName.text = "Correct";
-            //PlayAudio(screenshotSound);
             StartCoroutine(TakeScreenshot());
             StartCoroutine(GetFiles());
             checkString = "";
 
             foreach (TriggerTest trigger in correctTriggerList)
             {
-                //trigger.image.color = Color.white;
-                //trigger.orderNum.text = "";
                 trigger.isCorrect = false;
             }
 
@@ -191,18 +185,12 @@ public class SigilManager : MonoBehaviour {
         yield return new WaitForSeconds(0.45f);
         if (SceneManager.GetSceneByName("LoadingScreen").isLoaded)
             SceneManager.UnloadSceneAsync("LoadingScreen");
-
-        Debug.Log("Unloaded scene");
     }
 
 
     //==Image Storage/Recall==//
     IEnumerator GetFiles()
     {
-        //loadingScreen.gameObject.SetActive(true);
-        //if (SceneManager.GetActiveScene().name != "LoadingScreen")
-        //    SceneManager.LoadSceneAsync("LoadingScreen", LoadSceneMode.Additive);
-
         yield return new WaitForSeconds(0.15f);
         storedSigils.Clear();
         sigilList.ClearOptions();
@@ -238,10 +226,6 @@ public class SigilManager : MonoBehaviour {
 
         sigilList.value = 0;
         sigilList.RefreshShownValue();
-        //loadingScreen.gameObject.SetActive(false);
-
-        //if (SceneManager.GetSceneByName("LoadingScreen").isLoaded)
-        //    SceneManager.UnloadSceneAsync("LoadingScreen");
     }
 
     public void LoadSavedImage ()
@@ -279,13 +263,13 @@ public class SigilManager : MonoBehaviour {
 
         checkString = checkString + character;
         screenShotName = checkString;
-
-        sigilName.text = checkString;
     }
 
     public void GenerateButton ()
     {
         //PlayAudio(generateSound);
+        checkString = inputField.text.ToUpper();
+        screenShotName = checkString;
 
         //Dog Easter Egg
         if (checkString == "POOP")
@@ -294,14 +278,15 @@ public class SigilManager : MonoBehaviour {
             storedImage.gameObject.SetActive(true);
             checkString = "";
             currentString = "";
-            sigilName.text = "";
+            inputField.text = "";
         }
 
         else
         {
-            checkString = RemoveDuplicateLetters(checkString);
-            checkString = RemoveVowels(checkString);
-            sigilName.text = ConvertToInt(checkString);
+            checkString = RemoveDuplicateLetters(checkString).ToUpper();
+            checkString = RemoveVowels(checkString).ToUpper();
+            checkString = checkString.Replace(" ", "");
+            inputField.text = ConvertToInt(checkString);
             CheckTriggers();
             storedImage.gameObject.SetActive(false);
         }
@@ -315,7 +300,7 @@ public class SigilManager : MonoBehaviour {
         screenShotName = "";
         ClearString();
 
-        sigilName.text = checkString;
+        inputField.text = "";
         foreach (TriggerTest trigger in correctTriggerList)
         {
             //trigger.image.color = Color.white;
