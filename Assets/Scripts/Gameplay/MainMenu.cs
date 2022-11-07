@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject MainMenuParent, AboutMenu;
+    [SerializeField] TMP_Text versionNum;
 
     private void Start()
     {
+        versionNum.text = $"v{Application.version}";
+
         MainMenuParent.SetActive(true);
         AboutMenu.SetActive(false);
 
