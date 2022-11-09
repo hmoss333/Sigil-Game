@@ -37,7 +37,7 @@ public class MainMenu : MonoBehaviour
 
     public void ViewButton()
     {
-        //TODO open the local image viewer application and redirect to the Sigil folder
-        ///Research the best way to manually save all generated sigils into a viewable format on the local device
+        SceneManager.LoadSceneAsync("LoadingScreen", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("Gallery");
     }
 }

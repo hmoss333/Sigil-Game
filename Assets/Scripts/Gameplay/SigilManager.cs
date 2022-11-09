@@ -50,7 +50,6 @@ public class SigilManager : MonoBehaviour {
     {
         currentString = "";
         storedImage.gameObject.SetActive(false);
-
     }
 
     string RemoveDuplicateLetters(string testString)

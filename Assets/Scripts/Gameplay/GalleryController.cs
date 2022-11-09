@@ -1,0 +1,96 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class GalleryController : MonoBehaviour
+{
+    Dictionary<string, Texture> storedSigils;
+    public Dropdown sigilList;
+    [SerializeField] RawImage sigilImage;
+    [SerializeField] ParticleSystem chargeEffect, burnEffect;
+    bool charging, burning;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        sigilImage.gameObject.SetActive(false);
+
+        storedSigils = new Dictionary<string, Texture>();
+        StartCoroutine(GetFiles());
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        charging = Input.GetKey(KeyCode.Mouse0) ? true : false;
+
+        if (charging)
+        {
+            Debug.Log("Charging...");
+        }
+
+        if (burning)
+        {
+            Debug.Log("Burn sigil");
+        }
+    }
+
+    public void Burn()
+    {
+
+    }
+
+    //==Image Storage/Recall==//
+    IEnumerator GetFiles()
+    {
+        yield return new WaitForSeconds(0.15f);
+        storedSigils.Clear();
+        sigilList.ClearOptions();
+
+        List<Dropdown.OptionData> tempOptionData = new List<Dropdown.OptionData>();
+
+        string info = Application.persistentDataPath + "/Sigils/";
+        string[] fileInfo = Directory.GetFiles(info, "*.png");
+        for (int i = 0; i < fileInfo.Length; i++)
+        {
+            string url = "file://" + fileInfo[i];
+
+            WWW www = new WWW(url);
+
+            // Wait for download to complete
+            yield return www;
+
+            string fileName = Path.GetFileNameWithoutExtension(fileInfo[i]);
+
+            if (!storedSigils.ContainsKey(fileName))
+                storedSigils.Add(fileName, www.texture);
+
+            Dropdown.OptionData newData = new Dropdown.OptionData();
+            newData.text = fileName;
+            //newData.image = Sprite.Create(www.texture, new Rect(0,0, www.texture.width, www.texture.height), new Vector2(0,0)); //not needed. storedSigils already has this reference
+            tempOptionData.Add(newData);
+        }
+
+        foreach (Dropdown.OptionData optionData in tempOptionData)
+        {
+            sigilList.options.Add(optionData);
+        }
+
+        sigilList.value = 0;
+        sigilList.RefreshShownValue();
+    }
+
+    public void LoadSavedImage()
+    {
+        if (storedSigils.Count > 0)
+        {
+            //PlayAudio(selectImageSound);
+
+            int tempValue = sigilList.value;
+            sigilImage.texture = storedSigils[sigilList.options[tempValue].text];
+            sigilImage.gameObject.SetActive(true);
+        }
+    }
+}
