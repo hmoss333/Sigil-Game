@@ -12,11 +12,15 @@ public class GalleryController : MonoBehaviour
     [SerializeField] ParticleSystem chargeEffect, burnEffect;
     [SerializeField] float burnTimer;
     bool charging, burning;
+    [SerializeField] GameObject pulseEffect, chargeText;
+    [SerializeField] GameObject burnWarning;
+
 
     // Start is called before the first frame update
     void Start()
     {
         sigilImage.gameObject.SetActive(false);
+        pulseEffect.SetActive(false);
 
         storedSigils = new Dictionary<string, Texture>();
         StartCoroutine(GetFiles());
@@ -26,6 +30,7 @@ public class GalleryController : MonoBehaviour
     void Update()
     {
         charging = Input.GetKey(KeyCode.Mouse0) ? true : false;
+        chargeText.SetActive(sigilImage.gameObject.activeSelf);
 
         //Feels like this can be simplified
         if (sigilImage.gameObject.activeSelf)
@@ -33,21 +38,37 @@ public class GalleryController : MonoBehaviour
             if (charging && !chargeEffect.isPlaying && !burning)
             {
                 chargeEffect.Play();
+                pulseEffect.SetActive(true);
             }
             else if ((!charging && chargeEffect.isPlaying) || burning)
             {
                 chargeEffect.Stop();
+                pulseEffect.SetActive(false);
             }
         }
     }
 
+
+
+    //==Burn UI Logic==//
     public void Burn()
     {
         if (sigilImage.gameObject.activeSelf && !burning)
         {
-            burning = true;
-            StartCoroutine(BurnRoutine(burnTimer));
+            burnWarning.SetActive(true);
         }
+    }
+
+    public void BurnYes()
+    {
+        burnWarning.SetActive(false);
+        burning = true;
+        StartCoroutine(BurnRoutine(burnTimer));
+    }
+
+    public void BurnNo()
+    {
+        burnWarning.SetActive(false);
     }
 
     IEnumerator BurnRoutine(float burnTime)
@@ -57,9 +78,11 @@ public class GalleryController : MonoBehaviour
         yield return new WaitForSeconds(burnTime);
 
         burnEffect.Stop();
-        RemoveSavedImage();
+        //RemoveSavedImage();
         burning = false;
     }
+
+
 
     //==Image Storage/Recall==//
     IEnumerator GetFiles()
