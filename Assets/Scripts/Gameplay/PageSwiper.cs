@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PageSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
 {
@@ -25,18 +26,6 @@ public class PageSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
     //public string dotFolderPath;
     //public Image sliderSpots;
 
-
-    //public void Start()
-    //{
-    //    currentChild = 0;
-    //    panelLocation = transform.position;
-    //    initPos = panelLocation;
-
-    //    easing = showSlide ? easing : 0f;
-
-    //    if (autoCycle)
-    //        ac = StartCoroutine(AutoCycle(tileTimer));
-    //}
 
     // Start is called before the first frame update
     void OnEnable()

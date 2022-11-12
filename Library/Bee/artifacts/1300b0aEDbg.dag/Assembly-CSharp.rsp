@@ -364,7 +364,6 @@
 "Assets/Scripts/Gameplay/TriggerTest.cs"
 "Assets/Scripts/LoadingScreen/LoadingScreen.cs"
 "Assets/Scripts/SplashScreen/SplashScreen.cs"
-"Assets/Scripts/uGUITools.cs"
 -langversion:9.0
 
 /deterministic

@@ -78,7 +78,7 @@ public class GalleryController : MonoBehaviour
         yield return new WaitForSeconds(burnTime);
 
         burnEffect.Stop();
-        //RemoveSavedImage();
+        RemoveSavedImage();
         burning = false;
     }
 

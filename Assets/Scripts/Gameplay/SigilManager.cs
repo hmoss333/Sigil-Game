@@ -13,12 +13,10 @@ public class SigilManager : MonoBehaviour {
     public string currentString;
     public string checkString;
     public static string screenShotName;
-    //public Text sigilName;
 
     public TriggerTest[] triggerList;
     public List<TriggerTest> correctTriggerList;
     Dictionary<string, Texture> storedSigils;
-    public Dropdown sigilList;
     public RawImage storedImage;
 
     //public AudioSource audioSource;
@@ -192,7 +190,7 @@ public class SigilManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.15f);
         storedSigils.Clear();
-        sigilList.ClearOptions();
+        //sigilList.ClearOptions();
 
         List<Dropdown.OptionData> tempOptionData = new List<Dropdown.OptionData>();
 
@@ -217,41 +215,6 @@ public class SigilManager : MonoBehaviour {
             //newData.image = Sprite.Create(www.texture, new Rect(0,0, www.texture.width, www.texture.height), new Vector2(0,0)); //not needed. storedSigils already has this reference
             tempOptionData.Add(newData);
         }
-
-        foreach (Dropdown.OptionData optionData in tempOptionData)
-        {
-            sigilList.options.Add(optionData);
-        }
-
-        sigilList.value = 0;
-        sigilList.RefreshShownValue();
-    }
-
-    public void LoadSavedImage ()
-    {
-        if (storedSigils.Count > 0)
-        {
-            //PlayAudio(selectImageSound);
-
-            int tempValue = sigilList.value;
-            storedImage.texture = storedSigils[sigilList.options[tempValue].text];
-            storedImage.gameObject.SetActive(true);
-        }
-    }
-
-    public void RemoveSavedImage ()
-    {
-        //PlayAudio(deleteSound);
-        if (storedSigils.Count > 0)
-        {
-            int tempValue = sigilList.value;
-            File.Delete(Application.persistentDataPath + "/Sigils/" + sigilList.options[tempValue].text + ".png");
-            storedSigils.Remove(sigilList.options[tempValue].text);
-            sigilList.options.RemoveAt(tempValue);
-            sigilList.Hide();
-            sigilList.RefreshShownValue();
-            ClearString();
-        }
     }
 
 
@@ -267,6 +230,7 @@ public class SigilManager : MonoBehaviour {
     public void GenerateButton ()
     {
         //PlayAudio(generateSound);
+
         checkString = inputField.text.ToUpper();
         screenShotName = checkString;
 
@@ -279,12 +243,19 @@ public class SigilManager : MonoBehaviour {
             currentString = "";
             inputField.text = "";
         }
-
+        //Convert text to numbers
         else
         {
             checkString = RemoveDuplicateLetters(checkString).ToUpper();
             checkString = RemoveVowels(checkString).ToUpper();
             checkString = checkString.Replace(" ", "");
+            string tempCheckString = "";
+            foreach (char c in checkString)
+            {
+                if (!char.IsPunctuation(c) && !char.IsDigit(c))
+                    tempCheckString += c;
+            }
+            checkString = tempCheckString;
             inputField.text = ConvertToInt(checkString);
             CheckTriggers();
             storedImage.gameObject.SetActive(false);

@@ -8,7 +8,7 @@ public class SplashScreen : MonoBehaviour {
     // Use this for initialization
 	void Start () {
         //This is where you will run any splash screen animation stuff
-        //Handheld.PlayFullScreenMovie("ZyroGamesTrailer.mp4", Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.Fill);
+        ////Handheld.PlayFullScreenMovie("ZyroGamesTrailer.mp4", Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.Fill);
 
         SceneManager.LoadSceneAsync("LoadingScreen", LoadSceneMode.Additive);
         SceneManager.LoadSceneAsync("MainMenu");

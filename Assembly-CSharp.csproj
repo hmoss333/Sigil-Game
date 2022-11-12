@@ -58,7 +58,6 @@
   <ItemGroup>
     <Compile Include="Assets/Scripts/Gameplay/GalleryController.cs" />
     <Compile Include="Assets/Scripts/Gameplay/HiResScreenShots.cs" />
-    <Compile Include="Assets/Scripts/uGUITools.cs" />
     <Compile Include="Assets/Scripts/SplashScreen/SplashScreen.cs" />
     <Compile Include="Assets/Scripts/Gameplay/TransformPulse.cs" />
     <Compile Include="Assets/Scripts/Gameplay/PageSwiper.cs" />

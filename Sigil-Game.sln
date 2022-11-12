@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreMountains.NiceVibration
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreMountains.NiceVibrations", "MoreMountains.NiceVibrations.csproj", "{6913B34A-6ADA-E080-77FF-2F2630EF5FD4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{4C3D2621-EBE2-DA2F-4938-6E9A0671B47F}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreMountains.NiceVibrations.Editor", "MoreMountains.NiceVibrations.Editor.csproj", "{C3ED0728-CCD3-2B9F-E3D7-59C7706FF549}"
 EndProject
 Global
@@ -33,6 +35,10 @@ Global
 		{6913B34A-6ADA-E080-77FF-2F2630EF5FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6913B34A-6ADA-E080-77FF-2F2630EF5FD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6913B34A-6ADA-E080-77FF-2F2630EF5FD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C3D2621-EBE2-DA2F-4938-6E9A0671B47F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C3D2621-EBE2-DA2F-4938-6E9A0671B47F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C3D2621-EBE2-DA2F-4938-6E9A0671B47F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C3D2621-EBE2-DA2F-4938-6E9A0671B47F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C3ED0728-CCD3-2B9F-E3D7-59C7706FF549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C3ED0728-CCD3-2B9F-E3D7-59C7706FF549}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3ED0728-CCD3-2B9F-E3D7-59C7706FF549}.Release|Any CPU.ActiveCfg = Release|Any CPU

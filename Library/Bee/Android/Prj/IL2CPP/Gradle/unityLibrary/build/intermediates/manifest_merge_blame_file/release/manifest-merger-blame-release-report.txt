@@ -1,0 +1,128 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    xmlns:tools="http://schemas.android.com/tools"
+4    package="com.unity3d.player"
+5    android:versionCode="17"
+6    android:versionName="2.0.0" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="22"
+9-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml
+10        android:targetSdkVersion="33" />
+10-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml
+11
+12    <uses-feature android:glEsVersion="0x00020000" />
+12-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:19:3-52
+12-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:19:17-49
+13
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:20:3-65
+14-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:20:20-62
+15    <uses-permission android:name="android.permission.VIBRATE" />
+15-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:21:3-64
+15-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:21:20-61
+16
+17    <uses-feature
+17-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:22:3-88
+18        android:name="android.hardware.touchscreen"
+18-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:22:17-60
+19        android:required="false" />
+19-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:22:61-85
+20    <uses-feature
+20-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:23:3-99
+21        android:name="android.hardware.touchscreen.multitouch"
+21-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:23:17-71
+22        android:required="false" />
+22-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:23:72-96
+23    <uses-feature
+23-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:24:3-108
+24        android:name="android.hardware.touchscreen.multitouch.distinct"
+24-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:24:17-80
+25        android:required="false" />
+25-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:24:81-105
+26
+27    <application
+27-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:3:3-18:17
+28        android:extractNativeLibs="true"
+28-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:3:16-48
+29        android:isGame="true" >
+29-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:3:49-70
+30        <activity
+30-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:5-12:16
+31            android:name="com.unity3d.player.UnityPlayerActivity"
+31-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:15-68
+32            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+32-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:186-367
+33            android:exported="true"
+33-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:439-462
+34            android:hardwareAccelerated="false"
+34-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:403-438
+35            android:launchMode="singleTask"
+35-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:154-185
+36            android:resizeableActivity="false"
+36-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:368-402
+37            android:screenOrientation="sensorPortrait"
+37-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:111-153
+38            android:theme="@style/UnityThemeSelector" >
+38-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:69-110
+39            <intent-filter>
+39-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:5:7-9:23
+40                <action android:name="android.intent.action.MAIN" />
+40-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:6:9-61
+40-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:6:17-58
+41
+42                <category android:name="android.intent.category.LAUNCHER" />
+42-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:7:9-69
+42-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:7:19-66
+43                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+43-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:8:9-78
+43-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:8:19-75
+44            </intent-filter>
+45
+46            <meta-data
+46-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:10:7-82
+47                android:name="unityplayer.UnityActivity"
+47-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:10:18-58
+48                android:value="true" />
+48-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:10:59-79
+49            <meta-data
+49-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:11:7-78
+50                android:name="android.notch_support"
+50-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:11:18-54
+51                android:value="true" />
+51-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:11:55-75
+52        </activity>
+53
+54        <meta-data
+54-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:13:5-69
+55            android:name="unity.splash-mode"
+55-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:13:16-48
+56            android:value="0" />
+56-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:13:49-66
+57        <meta-data
+57-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:14:5-74
+58            android:name="unity.splash-enable"
+58-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:14:16-50
+59            android:value="True" />
+59-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:14:51-71
+60        <meta-data
+60-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:15:5-78
+61            android:name="unity.launch-fullscreen"
+61-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:15:16-54
+62            android:value="True" />
+62-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:15:55-75
+63        <meta-data
+63-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:5-84
+64            android:name="unity.allow-resizable-window"
+64-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:16-59
+65            android:value="False" />
+65-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:60-81
+66        <meta-data
+66-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:17:5-81
+67            android:name="notch.config"
+67-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:17:16-43
+68            android:value="portrait|landscape" />
+68-->/Users/henrymoss/Documents/GitHub/Sigil-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:17:44-78
+69    </application>
+70
+71</manifest>
