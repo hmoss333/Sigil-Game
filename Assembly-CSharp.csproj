@@ -64,29 +64,31 @@
     <Compile Include="Assets/Scripts/LoadingScreen/LoadingScreen.cs" />
     <Compile Include="Assets/Scripts/Gameplay/MainMenu.cs" />
     <Compile Include="Assets/Scripts/Gameplay/TriggerTest.cs" />
+    <Compile Include="Assets/Imported/FireExplosionVFX/Scripts/LaunchEffect.cs" />
+    <Compile Include="Assets/Imported/FireExplosionVFX/Scripts/FxSplash.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
-    <None Include="Assets/NiceVibrations/OlderVersions/v2.0.1/NiceVibrations-v-2-0-1-readme.txt" />
+    <None Include="Assets/Imported/NiceVibrations/OlderVersions/v2.0.1/NiceVibrations-v-2-0-1-readme.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
     <None Include="Assets/Fonts/Downloads/Another America (Personal Use) - READ ME.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" />
-    <None Include="Assets/NiceVibrations/Common/Plugins/Android/AndroidManifest.xml" />
+    <None Include="Assets/Imported/NiceVibrations/Common/Plugins/Android/AndroidManifest.xml" />
     <None Include="Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" />
-    <None Include="Assets/NiceVibrations/OlderVersions/v1.7/NiceVibrations-v-1-7-readme.txt" />
+    <None Include="Assets/Imported/NiceVibrations/OlderVersions/v1.7/NiceVibrations-v-1-7-readme.txt" />
     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
-    <None Include="Assets/NiceVibrations/readme.txt" />
-    <None Include="Assets/NiceVibrations/license.txt" />
+    <None Include="Assets/Imported/NiceVibrations/readme.txt" />
+    <None Include="Assets/Imported/NiceVibrations/license.txt" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
@@ -768,15 +770,33 @@
     <Reference Include="Unity.VisualScripting.Core">
       <HintPath>Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="MoreMountains.NiceVibrations.csproj">
-      <Project>{6913B34A-6ADA-E080-77FF-2F2630EF5FD4}</Project>
-      <Name>MoreMountains.NiceVibrations</Name>
-    </ProjectReference>
     <ProjectReference Include="MoreMountains.NiceVibrations.Haptics.csproj">
       <Project>{08F8ED31-644F-8B41-22E4-16338F70C604}</Project>
       <Name>MoreMountains.NiceVibrations.Haptics</Name>
+    </ProjectReference>
+    <ProjectReference Include="MoreMountains.NiceVibrations.csproj">
+      <Project>{6913B34A-6ADA-E080-77FF-2F2630EF5FD4}</Project>
+      <Name>MoreMountains.NiceVibrations</Name>
     </ProjectReference>
     <ProjectReference Include="MoreMountains.NiceVibrations.Editor.csproj">
       <Project>{C3ED0728-CCD3-2B9F-E3D7-59C7706FF549}</Project>

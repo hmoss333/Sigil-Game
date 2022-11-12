@@ -345,11 +345,11 @@
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.UI.ref.dll"
-"Assets/NiceVibrations/Common/Scripts/Editor/DefineSymbols/NiceVibrationsDefineSymbols.cs"
-"Assets/NiceVibrations/Common/Scripts/Editor/MMNVAndroidWaveFormAssetEditor.cs"
-"Assets/NiceVibrations/Common/Scripts/Editor/MMNVAssetPostProcessor.cs"
-"Assets/NiceVibrations/Common/Scripts/Editor/MMNVBuildPostProcessor.cs"
-"Assets/NiceVibrations/Common/Scripts/Editor/MMNVRumbleWaveFormAssetEditor.cs"
+"Assets/Imported/NiceVibrations/Common/Scripts/Editor/DefineSymbols/NiceVibrationsDefineSymbols.cs"
+"Assets/Imported/NiceVibrations/Common/Scripts/Editor/MMNVAndroidWaveFormAssetEditor.cs"
+"Assets/Imported/NiceVibrations/Common/Scripts/Editor/MMNVAssetPostProcessor.cs"
+"Assets/Imported/NiceVibrations/Common/Scripts/Editor/MMNVBuildPostProcessor.cs"
+"Assets/Imported/NiceVibrations/Common/Scripts/Editor/MMNVRumbleWaveFormAssetEditor.cs"
 -langversion:9.0
 
 /deterministic

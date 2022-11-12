@@ -10,6 +10,7 @@ public class GalleryController : MonoBehaviour
     public Dropdown sigilList;
     [SerializeField] RawImage sigilImage;
     [SerializeField] ParticleSystem chargeEffect, burnEffect;
+    [SerializeField] float burnTimer;
     bool charging, burning;
 
     // Start is called before the first frame update
@@ -26,20 +27,38 @@ public class GalleryController : MonoBehaviour
     {
         charging = Input.GetKey(KeyCode.Mouse0) ? true : false;
 
-        if (charging)
+        //Feels like this can be simplified
+        if (sigilImage.gameObject.activeSelf)
         {
-            Debug.Log("Charging...");
-        }
-
-        if (burning)
-        {
-            Debug.Log("Burn sigil");
+            if (charging && !chargeEffect.isPlaying && !burning)
+            {
+                chargeEffect.Play();
+            }
+            else if ((!charging && chargeEffect.isPlaying) || burning)
+            {
+                chargeEffect.Stop();
+            }
         }
     }
 
     public void Burn()
     {
+        if (sigilImage.gameObject.activeSelf && !burning)
+        {
+            burning = true;
+            StartCoroutine(BurnRoutine(burnTimer));
+        }
+    }
 
+    IEnumerator BurnRoutine(float burnTime)
+    {
+        burnEffect.Play();
+
+        yield return new WaitForSeconds(burnTime);
+
+        burnEffect.Stop();
+        RemoveSavedImage();
+        burning = false;
     }
 
     //==Image Storage/Recall==//
@@ -91,6 +110,21 @@ public class GalleryController : MonoBehaviour
             int tempValue = sigilList.value;
             sigilImage.texture = storedSigils[sigilList.options[tempValue].text];
             sigilImage.gameObject.SetActive(true);
+        }
+    }
+
+    public void RemoveSavedImage()
+    {
+        //PlayAudio(deleteSound);
+        if (storedSigils.Count > 0)
+        {
+            int tempValue = sigilList.value;
+            File.Delete(Application.persistentDataPath + "/Sigils/" + sigilList.options[tempValue].text + ".png");
+            storedSigils.Remove(sigilList.options[tempValue].text);
+            sigilList.options.RemoveAt(tempValue);
+            sigilList.Hide();
+            sigilList.RefreshShownValue();
+            sigilImage.gameObject.SetActive(false);
         }
     }
 }

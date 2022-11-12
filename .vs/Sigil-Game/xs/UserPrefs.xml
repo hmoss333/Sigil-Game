@@ -1,13 +1,15 @@
 ﻿<Properties StartupConfiguration="{DE3B0AE3-AE46-E400-8823-CF1A65052C75}|">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Gameplay/ExitButton.cs">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/henrymoss/Documents/GitHub/Sigil-Game/Assets/Scripts/Gameplay/HiResScreenShots.cs" relfile="Assets/Scripts/Gameplay/HiResScreenShots.cs" line="48" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Gameplay/GalleryController.cs">
     <Files>
       <File FileName="Assets/Scripts/Gameplay/PageSwiper.cs" Line="39" Column="8" />
       <File FileName="Assets/Scripts/Gameplay/HiResScreenShots.cs" Line="37" Column="73" />
-      <File FileName="Assets/Scripts/Gameplay/SigilManager.cs" Line="235" Column="1" />
-      <File FileName="Assets/Scripts/GalleryController.cs" Line="93" Column="51" />
-      <File FileName="Assets/Scripts/Gameplay/ExitButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Gameplay/SigilManager.cs" Line="242" Column="1" />
+      <File FileName="Assets/Scripts/Gameplay/GalleryController.cs" Line="124" Column="36" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,11 +27,8 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7aa94293-4a69-4f97-833c-802983c30069" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/henrymoss/Documents/GitHub/Sigil-Game/Assets/Scripts/Gameplay/HiResScreenShots.cs" relfile="Assets/Scripts/Gameplay/HiResScreenShots.cs" line="48" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4b1b79bf-dd03-40f6-b776-ca2d34106bf8" />
+  <MultiItemStartupConfigurations />
 </Properties>
