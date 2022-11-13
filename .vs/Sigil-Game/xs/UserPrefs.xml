@@ -1,17 +1,20 @@
 ﻿<Properties StartupConfiguration="{DE3B0AE3-AE46-E400-8823-CF1A65052C75}|">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/henrymoss/Documents/GitHub/Sigil-Game/Assets/Scripts/Gameplay/HiResScreenShots.cs" relfile="Assets/Scripts/Gameplay/HiResScreenShots.cs" line="48" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="77243f78-c543-40f1-86a3-ecb5d1243370" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Gameplay/MainMenu.cs">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0f48d131-68fc-412c-b1f2-c4cab9bd2f8f" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Gameplay/AudioController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Gameplay/SigilManager.cs" Line="184" Column="36" />
+      <File FileName="Assets/Scripts/Gameplay/SigilManager.cs" Line="22" Column="5" />
       <File FileName="Assets/Scripts/Gameplay/GalleryController.cs" Line="120" Column="47" />
       <File FileName="Assets/Scripts/Gameplay/TransformPulse.cs" Line="20" Column="30" />
       <File FileName="Assets/Scripts/Gameplay/MainMenu.cs" Line="21" Column="11" />
+      <File FileName="Assets/Scripts/Gameplay/AudioController.cs" Line="49" Column="60" />
+      <File FileName="Assets/Scripts/Gameplay/ExitButton.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -29,6 +32,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

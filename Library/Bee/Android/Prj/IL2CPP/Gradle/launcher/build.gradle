@@ -20,7 +20,7 @@ android {
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a'
         }
-        versionCode 17
+        versionCode 18
         versionName '2.0.0'
     }
 

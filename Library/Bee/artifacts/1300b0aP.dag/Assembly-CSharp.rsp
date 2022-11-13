@@ -307,6 +307,7 @@
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.VisualScripting.Flow.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/Unity.VisualScripting.State.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aP.dag/UnityEngine.UI.ref.dll"
+"Assets/Scripts/Gameplay/AudioController.cs"
 "Assets/Scripts/Gameplay/ExitButton.cs"
 "Assets/Scripts/Gameplay/GalleryController.cs"
 "Assets/Scripts/Gameplay/HiResScreenShots.cs"

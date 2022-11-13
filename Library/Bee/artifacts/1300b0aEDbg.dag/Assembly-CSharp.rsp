@@ -353,6 +353,7 @@
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/UnityEngine.UI.ref.dll"
+"Assets/Scripts/Gameplay/AudioController.cs"
 "Assets/Scripts/Gameplay/ExitButton.cs"
 "Assets/Scripts/Gameplay/GalleryController.cs"
 "Assets/Scripts/Gameplay/HiResScreenShots.cs"

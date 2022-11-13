@@ -208,6 +208,9 @@ UnityEngine.AudioSettings::StopAudioOutput
 UnityEngine.AudioSource::PlayHelper
 UnityEngine.AudioSource::SetPitch
 UnityEngine.AudioSource::Stop
+UnityEngine.AudioSource::set_clip
+UnityEngine.AudioSource::set_loop
+UnityEngine.AudioSource::set_playOnAwake
 UnityEngine.AudioSource::set_volume
 UnityEngine.Behaviour::get_enabled
 UnityEngine.Behaviour::get_isActiveAndEnabled
@@ -696,8 +699,10 @@ UnityEngine.PlayerConnectionInternal::PollInternal
 UnityEngine.PlayerConnectionInternal::RegisterInternal
 UnityEngine.PlayerConnectionInternal::SendMessage
 UnityEngine.PlayerConnectionInternal::UnregisterInternal
+UnityEngine.PlayerPrefs::TrySetFloat
 UnityEngine.PlayerPrefs::TrySetInt
 UnityEngine.PlayerPrefs::GetInt
+UnityEngine.PlayerPrefs::GetFloat
 UnityEngine.Profiling.Profiler::GetRuntimeMemorySizeLong
 UnityEngine.PropertyNameUtils::PropertyNameFromString_Injected
 UnityEngine.QualitySettings::set_vSyncCount

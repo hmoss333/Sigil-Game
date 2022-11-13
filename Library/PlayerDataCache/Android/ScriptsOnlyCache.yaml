@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AudioController
     - ExitButton
     - GalleryController
     - HiResScreenShots
@@ -96,6 +97,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 96
       Script: {instanceID: 0}
     - Class: 104
@@ -138,6 +141,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 7730}
     - Class: 114
       Script: {instanceID: 9492}
+    - Class: 114
+      Script: {instanceID: 25152}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -174,6 +179,8 @@ ScriptsOnlyBuild:
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -215,6 +222,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 8238}
     - Class: 114
       Script: {instanceID: 8586}
+    - Class: 114
+      Script: {instanceID: 25152}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -295,6 +304,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -319,6 +332,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 7284}
     - Class: 114
       Script: {instanceID: 8998}
+    - Class: 114
+      Script: {instanceID: 25152}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1765,6 +1780,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: d0959ff625fb352f8feddb8fbd53818f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioController
   platform: 13
   scenePathNames:
   - Assets/Scenes/SplashScreen.unity
