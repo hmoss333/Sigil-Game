@@ -59,6 +59,7 @@
     <Compile Include="Assets/Scripts/Gameplay/GalleryController.cs" />
     <Compile Include="Assets/Scripts/Gameplay/HiResScreenShots.cs" />
     <Compile Include="Assets/Scripts/SplashScreen/SplashScreen.cs" />
+    <Compile Include="Assets/Scripts/Gameplay/AudioController.cs" />
     <Compile Include="Assets/Scripts/Gameplay/TransformPulse.cs" />
     <Compile Include="Assets/Scripts/Gameplay/PageSwiper.cs" />
     <Compile Include="Assets/Scripts/Gameplay/SwipeTrail.cs" />
@@ -67,7 +68,6 @@
     <Compile Include="Assets/Scripts/LoadingScreen/LoadingScreen.cs" />
     <Compile Include="Assets/Scripts/Gameplay/MainMenu.cs" />
     <Compile Include="Assets/Scripts/Gameplay/TriggerTest.cs" />
-    <Compile Include="Assets/Scripts/Gameplay/AudioController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
