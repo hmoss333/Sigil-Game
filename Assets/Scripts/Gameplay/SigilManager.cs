@@ -11,6 +11,7 @@ public class SigilManager : MonoBehaviour {
 
     public string currentString;
     public string checkString;
+    public TMPro.TMP_InputField inputField;
     public static string screenShotName;
     public Text sigilName;
 
@@ -280,6 +281,13 @@ public class SigilManager : MonoBehaviour {
         checkString = checkString + character;
         screenShotName = checkString;
 
+        sigilName.text = checkString;
+    }
+
+    public void SetPhrase()
+    {
+        checkString = inputField.text.ToUpper();
+        screenShotName = checkString;
         sigilName.text = checkString;
     }
 

@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
     public void CreateButton()
     {
         SceneManager.LoadSceneAsync("LoadingScreen", LoadSceneMode.Additive);
-        SceneManager.LoadSceneAsync("Test_New");
+        SceneManager.LoadSceneAsync("Test");
     }
 
     public void ViewButton()

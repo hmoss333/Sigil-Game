@@ -101,9 +101,9 @@ public class HiResScreenShots : MonoBehaviour {
             byte[] bytes = screenShot.EncodeToPNG();
             string filename = ScreenShotName(SigilManager.screenShotName);
             System.IO.File.WriteAllBytes(filename, bytes);
-//#if UNITY_ANDROID
+#if UNITY_ANDROID
             SaveImageToGallery(screenShot, SigilManager.screenShotName, SigilManager.screenShotName);
-//#endif
+#endif
             Debug.Log(string.Format("Took screenshot to: {0}", filename));
             camera.cullingMask |= 1 << LayerMask.NameToLayer("UI"); //Show UI layer
             takeHiResShot = false;
