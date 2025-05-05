@@ -90,6 +90,8 @@ public class SigilManager : MonoBehaviour {
 
         for (int i = 0; i < testString.Length; i++)
         {
+            print(testString[i]);
+
             if ("AHOV".Contains(testString[i]))
                 numberOrder += "1";
             if ("BIPW".Contains(testString[i]))
@@ -286,7 +288,9 @@ public class SigilManager : MonoBehaviour {
 
     public void SetPhrase()
     {
-        checkString = inputField.text.ToUpper();
+        checkString = inputField.text.ToUpper(); //get text string from inputField
+        checkString = new string(checkString.Where(c => !char.IsPunctuation(c)).ToArray()); //remove punctuation
+        checkString = new string(checkString.Where(c => !char.IsWhiteSpace(c)).ToArray()); //remove white spaces
         screenShotName = checkString;
         sigilName.text = checkString;
     }
