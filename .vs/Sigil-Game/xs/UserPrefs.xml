@@ -1,12 +1,16 @@
 ﻿<Properties StartupConfiguration="{DE3B0AE3-AE46-E400-8823-CF1A65052C75}|">
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c9b7d3b3-71a6-4aad-a809-ab304d75e45b" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Gameplay/SigilManager.cs">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0a33fb06-ebb4-4168-ab10-c62f239c0b5a" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Gameplay/MainMenu.cs">
     <Files>
       <File FileName="Assets/Scripts/Gameplay/TriggerTest.cs" Line="26" Column="11" />
       <File FileName="Assets/Scripts/Gameplay/SigilManager.cs" Line="296" Column="6" />
       <File FileName="Assets/Scripts/Gameplay/HiResScreenShots.cs" Line="106" Column="1" />
-      <File FileName="Assets/Scripts/Gameplay/MainMenu.cs" Line="25" Column="45" />
+      <File FileName="Assets/Scripts/Gameplay/MainMenu.cs" Line="19" Column="45" />
       <File FileName="Assets/Scripts/LoadingScreen/LoadingScreen.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/SplashScreen/SplashScreen.cs" Line="14" Column="47" />
     </Files>
@@ -26,9 +30,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
 </Properties>

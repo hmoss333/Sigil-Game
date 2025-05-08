@@ -12,9 +12,11 @@ ScriptsOnlyBuild:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
+    - TMPro.TMP_InputField
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -30,8 +32,10 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Dropdown
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.LayoutElement
     - UnityEngine.UI.Mask
     - UnityEngine.UI.RawImage
+    - UnityEngine.UI.RectMask2D
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
@@ -53,13 +57,13 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1582}
+      Script: {instanceID: 1580}
     - Class: 114
       Script: {instanceID: 2774}
     - Class: 114
-      Script: {instanceID: 5216}
+      Script: {instanceID: 5218}
     - Class: 114
-      Script: {instanceID: 5512}
+      Script: {instanceID: 5516}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -98,21 +102,21 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1582}
+      Script: {instanceID: 1580}
     - Class: 114
       Script: {instanceID: 2570}
     - Class: 114
       Script: {instanceID: 2774}
     - Class: 114
-      Script: {instanceID: 3044}
+      Script: {instanceID: 3046}
     - Class: 114
-      Script: {instanceID: 5216}
+      Script: {instanceID: 5218}
     - Class: 114
-      Script: {instanceID: 5512}
+      Script: {instanceID: 5516}
     - Class: 114
-      Script: {instanceID: 5966}
+      Script: {instanceID: 5970}
     - Class: 114
-      Script: {instanceID: 7334}
+      Script: {instanceID: 7338}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -151,13 +155,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2154}
     - Class: 114
-      Script: {instanceID: 3748}
+      Script: {instanceID: 3750}
     - Class: 114
-      Script: {instanceID: 4030}
+      Script: {instanceID: 4032}
     - Class: 114
-      Script: {instanceID: 4284}
+      Script: {instanceID: 4286}
     - Class: 114
-      Script: {instanceID: 4964}
+      Script: {instanceID: 4966}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -172,7 +176,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 850595691
       Script: {instanceID: 0}
-    Assets/Scenes/Test_New.unity:
+    Assets/Scenes/Test.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -202,9 +206,11 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1582}
+      Script: {instanceID: 1580}
     - Class: 114
-      Script: {instanceID: 1768}
+      Script: {instanceID: 1700}
+    - Class: 114
+      Script: {instanceID: 1766}
     - Class: 114
       Script: {instanceID: 2284}
     - Class: 114
@@ -212,37 +218,45 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2774}
     - Class: 114
-      Script: {instanceID: 3044}
+      Script: {instanceID: 3046}
     - Class: 114
-      Script: {instanceID: 3210}
+      Script: {instanceID: 3212}
     - Class: 114
-      Script: {instanceID: 3806}
+      Script: {instanceID: 3808}
     - Class: 114
-      Script: {instanceID: 4836}
+      Script: {instanceID: 4016}
     - Class: 114
-      Script: {instanceID: 5216}
+      Script: {instanceID: 4780}
     - Class: 114
-      Script: {instanceID: 5512}
+      Script: {instanceID: 4838}
     - Class: 114
-      Script: {instanceID: 5598}
+      Script: {instanceID: 4966}
     - Class: 114
-      Script: {instanceID: 5966}
+      Script: {instanceID: 5218}
     - Class: 114
-      Script: {instanceID: 5976}
+      Script: {instanceID: 5516}
     - Class: 114
-      Script: {instanceID: 5992}
+      Script: {instanceID: 5602}
     - Class: 114
-      Script: {instanceID: 6294}
+      Script: {instanceID: 5664}
     - Class: 114
-      Script: {instanceID: 6320}
+      Script: {instanceID: 5970}
     - Class: 114
-      Script: {instanceID: 6688}
+      Script: {instanceID: 5980}
     - Class: 114
-      Script: {instanceID: 6740}
+      Script: {instanceID: 5996}
     - Class: 114
-      Script: {instanceID: 7018}
+      Script: {instanceID: 6298}
     - Class: 114
-      Script: {instanceID: 7724}
+      Script: {instanceID: 6324}
+    - Class: 114
+      Script: {instanceID: 6692}
+    - Class: 114
+      Script: {instanceID: 6744}
+    - Class: 114
+      Script: {instanceID: 7022}
+    - Class: 114
+      Script: {instanceID: 7728}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -890,7 +904,7 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
-      Hash: 79bd765eb28294219a27d58e7a83879b
+      Hash: 9c98c0c609044930a60cc745dae66426
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SigilManager
@@ -1091,5 +1105,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/SplashScreen.unity
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/LoadingScreen.unity
-  - Assets/Scenes/Test_New.unity
+  - Assets/Scenes/Test.unity
   playerPath: /Users/henrymoss/Desktop/Sigil.app
